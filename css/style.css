@@ -601,3 +601,25 @@ grid-template-columns:1fr;
 }
 
 }
+
+/*==========================================
+SECOND UPDATE SECTION
+==========================================*/
+
+.home-extra-updates{
+
+padding:25px 0;
+
+}
+
+.purple{
+background:#6f42c1;
+}
+
+.teal{
+background:#009688;
+}
+
+.red{
+background:#dc3545;
+}
