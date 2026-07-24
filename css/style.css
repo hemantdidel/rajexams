@@ -1,1 +1,148 @@
+/* ==========================================================
+   RajExams
+   Global Styles
+========================================================== */
 
+/* Reset */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* HTML */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Body */
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    background:var(--body-bg);
+    color:var(--text);
+}
+
+/* Images */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* List */
+
+ul{
+    list-style:none;
+}
+
+/* Buttons */
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    background:none;
+    font:inherit;
+}
+
+/* Inputs */
+
+input,
+select,
+textarea{
+    font:inherit;
+    outline:none;
+}
+
+/* Container */
+
+.container{
+    width:min(100% - 30px,var(--container));
+    margin:auto;
+}
+
+/* Section */
+
+section{
+    padding:30px 0;
+}
+
+/* Section Heading */
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.section-heading h2{
+    font-size:28px;
+    font-weight:700;
+}
+
+.section-heading a{
+    color:var(--primary);
+    font-weight:600;
+}
+
+/* Card */
+
+.card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow);
+}
+
+/* Button */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 18px;
+    border-radius:var(--radius-sm);
+    background:var(--primary);
+    color:#fff;
+    transition:var(--transition);
+}
+
+.btn:hover{
+    background:var(--primary-dark);
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+    gap:20px;
+}
+
+/* Utilities */
+
+.text-center{
+    text-align:center;
+}
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mb-20{
+    margin-bottom:20px;
+}
