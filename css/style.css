@@ -210,3 +210,91 @@ BREAKING NEWS
     text-decoration:underline;
 
 }
+
+/* ==========================================================
+   QUICK LINKS
+========================================================== */
+
+.quick-links{
+
+    padding:25px 0;
+
+}
+
+.quick-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.quick-card{
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:20px 10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+}
+
+.quick-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.quick-card span{
+
+    font-size:34px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+.quick-card h3{
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+/* Colors */
+
+.jobs{background:#0d6efd;}
+
+.results{background:#198754;}
+
+.admit{background:#dc3545;}
+
+.answer{background:#fd7e14;}
+
+.admission{background:#6f42c1;}
+
+.syllabus{background:#20c997;}
+
+.current{background:#0dcaf0;}
+
+.notes{background:#6c757d;}
+
+@media(max-width:768px){
+
+.quick-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
