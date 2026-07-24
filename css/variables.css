@@ -1,1 +1,56 @@
+/* ==========================================================
+   RajExams
+   Global Variables
+========================================================== */
 
+:root {
+
+    /* Primary */
+
+    --primary: #0B57D0;
+    --primary-dark: #0847AE;
+    --primary-light: #EAF2FF;
+
+    /* Status */
+
+    --success: #198754;
+    --danger: #DC3545;
+    --warning: #FFC107;
+
+    /* Background */
+
+    --body-bg: #F5F7FB;
+    --card-bg: #FFFFFF;
+    --header-bg: #FFFFFF;
+    --footer-bg: #172337;
+
+    /* Text */
+
+    --text: #222222;
+    --text-light: #666666;
+    --white: #FFFFFF;
+
+    /* Border */
+
+    --border: #E3E7EE;
+
+    /* Radius */
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+
+    /* Shadow */
+
+    --shadow:
+        0 4px 18px rgba(0,0,0,.08);
+
+    /* Container */
+
+    --container: 1280px;
+
+    /* Transition */
+
+    --transition: .3s ease;
+
+}
