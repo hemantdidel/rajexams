@@ -1,48 +1,57 @@
-async function loadBreakingNews(){
+/* ==========================================
+   RajExams Main App
+========================================== */
 
-    try{
+document.addEventListener("DOMContentLoaded", () => {
 
-        const res = await fetch("data/breaking-news.json");
+    loadBreakingNews();
 
-        const news = await res.json();
+    loadList("data/jobs.json", "latestJobsList");
 
-        const marquee = document.getElementById("breakingNews");
+    loadList("data/results.json", "latestResultsList");
 
-        if(!marquee) return;
+    loadList("data/admit-cards.json", "latestAdmitList");
 
-        marquee.innerHTML = news.map(item =>
+});
 
-            `<a href="${item.url}">${item.title}</a>`
+/* ==========================================
+   Breaking News
+========================================== */
 
-        ).join(" &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; ");
+async function loadBreakingNews() {
+
+    const container = document.getElementById("breakingNews");
+
+    if (!container) return;
+
+    try {
+
+        const response = await fetch("data/breaking-news.json");
+
+        if (!response.ok) {
+            throw new Error("breaking-news.json not found");
+        }
+
+        const news = await response.json();
+
+        container.innerHTML = news.map(item => {
+
+            return `
+                <a href="${item.url}">
+                    ${item.title}
+                </a>
+            `;
+
+        }).join(" &nbsp;&nbsp; | &nbsp;&nbsp; ");
 
     }
 
-    catch(err){
+    catch (error) {
 
-        console.log(err);
+        console.error("Breaking News Error:", error);
+
+        container.innerHTML = "";
 
     }
 
 }
-
-document.addEventListener("DOMContentLoaded",loadBreakingNews);
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    loadList(
-        "data/jobs.json",
-        "latestJobsList"
-    );
-
-    loadList(
-        "data/results.json",
-        "latestResultsList"
-    );
-
-    loadList(
-        "data/admit-cards.json",
-        "latestAdmitList"
-    );
-
-});
