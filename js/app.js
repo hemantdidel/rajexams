@@ -27,3 +27,22 @@ async function loadBreakingNews(){
 }
 
 document.addEventListener("DOMContentLoaded",loadBreakingNews);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadList(
+        "data/jobs.json",
+        "latestJobsList"
+    );
+
+    loadList(
+        "data/results.json",
+        "latestResultsList"
+    );
+
+    loadList(
+        "data/admit-cards.json",
+        "latestAdmitList"
+    );
+
+});
