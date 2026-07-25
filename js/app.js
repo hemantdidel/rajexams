@@ -53,3 +53,9 @@ document.addEventListener("componentsLoaded", () => {
     loadBreakingNews();
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadJobs();
+
+});
