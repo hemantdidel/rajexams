@@ -1,28 +1,36 @@
-async function loadList(jsonFile, elementId) {
+/* ==========================================
+Load Jobs
+========================================== */
+
+async function loadJobs() {
 
     try {
 
-        const response = await fetch(jsonFile);
+        const response = await fetch("data/jobs.json");
 
-        const data = await response.json();
+        const jobs = await response.json();
 
-        const container = document.getElementById(elementId);
+        const list = document.getElementById("jobsList");
 
-        if (!container) return;
+        if (!list) return;
 
-        container.innerHTML = "";
+        list.innerHTML = "";
 
-        data.forEach(item => {
+        jobs.forEach(job => {
 
-            container.innerHTML += `
+            list.innerHTML += `
 
             <li>
 
-                <a href="${item.url}">
+                <a href="${job.slug}.html">
 
-                    ➜ ${item.title}
+                    <span>
 
-                    ${item.new ? '<span class="new-tag">NEW</span>' : ''}
+                        ➜ ${job.title}
+
+                    </span>
+
+                    ${job.new ? '<span class="new-tag">NEW</span>' : ""}
 
                 </a>
 
@@ -34,9 +42,9 @@ async function loadList(jsonFile, elementId) {
 
     }
 
-    catch (e) {
+    catch(error){
 
-        console.error(e);
+        console.error("Jobs Loading Error :", error);
 
     }
 
