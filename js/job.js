@@ -53,6 +53,56 @@ function renderJob(job){
 
 }
 
+const dates = document.getElementById("importantDates");
+
+dates.innerHTML = "";
+
+for (const [key, value] of Object.entries(job.importantDates)) {
+
+    let title = key;
+
+    switch (key) {
+
+        case "applicationBegin":
+            title = "Application Begin";
+            break;
+
+        case "lastDate":
+            title = "Last Date";
+            break;
+
+        case "feePayment":
+            title = "Fee Payment Last Date";
+            break;
+
+        case "correctionDate":
+            title = "Correction Date";
+            break;
+
+        case "examDate":
+            title = "Exam Date";
+            break;
+
+        case "admitCard":
+            title = "Admit Card";
+            break;
+
+    }
+
+    dates.innerHTML += `
+
+        <tr>
+
+            <td>${title}</td>
+
+            <td>${value}</td>
+
+        </tr>
+
+    `;
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     loadJob();
