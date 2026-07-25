@@ -39,7 +39,15 @@ async function loadJob() {
 
 function renderJob(job){
 
-    console.log(job);
+    document.title = job.title;
+
+    document.getElementById("jobTitle").textContent = job.title;
+
+    document.getElementById("jobBadge").textContent = job.badge;
+
+    document.getElementById("jobDescription").textContent = job.description;
+
+    document.getElementById("shortInformation").textContent = job.shortInformation;
 
 }
 
