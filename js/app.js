@@ -88,6 +88,16 @@ if (document.getElementById("syllabusList")) {
     );
 
 }
+   /* Current Affairs Page */
+
+if (document.getElementById("currentAffairsList")) {
+
+    loadList(
+        "data/current-affairs.json",
+        "currentAffairsList"
+    );
+
+}
 
 });
 
