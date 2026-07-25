@@ -1193,3 +1193,22 @@ INFO TABLE
     border-bottom:none;
 
 }
+
+.info-table th{
+
+    background:#0B57D0;
+
+    color:#fff;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+.info-table th,
+.info-table td{
+
+    border:1px solid #ddd;
+
+}
