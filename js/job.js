@@ -15,7 +15,7 @@ async function loadJob() {
             .replace(".html", "");
 
         // JSON File
-        const response = await fetch(`data/${page}.json`);
+        const response = await fetch(`data/jobs/${slug}.json`);
 
         if (!response.ok) {
 
