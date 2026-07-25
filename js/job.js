@@ -607,7 +607,7 @@ async function loadRelatedJobs(currentSlug){
 
     try{
 
-        const jobs = await getJSON("data/jobs.json");
+        const jobs = await getJSON("data/jobs-list.json");
 
         const container = $("relatedJobs");
 
