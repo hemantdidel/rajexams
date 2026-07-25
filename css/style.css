@@ -1212,3 +1212,245 @@ INFO TABLE
     border:1px solid #ddd;
 
 }
+
+.info-table th,
+.info-table td{
+
+    text-align:left;
+
+    vertical-align:middle;
+
+}
+
+.info-table td:nth-child(2),
+.info-table td:nth-child(3){
+
+    text-align:center;
+
+    width:120px;
+
+}
+
+.link-btn{
+
+    display:inline-block;
+
+    background:#0B57D0;
+
+    color:#fff;
+
+    padding:8px 18px;
+
+    border-radius:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.link-btn:hover{
+
+    background:#084298;
+
+}
+
+/*==========================================
+ELIGIBILITY
+==========================================*/
+
+.eligibility-item{
+
+    margin-bottom:20px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.eligibility-item:last-child{
+
+    margin-bottom:0;
+
+    padding-bottom:0;
+
+    border-bottom:none;
+
+}
+
+.eligibility-item h3{
+
+    color:#0B57D0;
+
+    margin-bottom:10px;
+
+    font-size:20px;
+
+}
+
+.eligibility-item p{
+
+    line-height:1.8;
+
+}
+
+/*==========================================
+SELECTION PROCESS
+==========================================*/
+
+.selection-list{
+
+    padding-left:20px;
+
+}
+
+.selection-list li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+/*==========================================
+LIST
+==========================================*/
+
+.job-list{
+
+    padding-left:22px;
+
+}
+
+.job-list li{
+
+    margin-bottom:12px;
+
+    line-height:1.9;
+
+}
+
+.job-list li:last-child{
+
+    margin-bottom:0;
+
+}
+
+/*==========================================
+FAQ
+==========================================*/
+
+.faq-item{
+
+    border-bottom:1px solid #e5e5e5;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    text-align:left;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.faq-question:hover{
+
+    background:#f8f9fa;
+
+}
+
+.faq-icon{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.faq-answer{
+
+    display:none;
+
+    padding:18px;
+
+    background:#fff;
+
+    line-height:1.8;
+
+}
+
+.faq-item.active .faq-answer{
+
+    display:block;
+
+}
+
+.faq-item.active .faq-icon{
+
+    transform:rotate(45deg);
+
+}
+
+/*==========================================
+RELATED JOBS
+==========================================*/
+
+.related-job-list{
+
+    list-style:none;
+
+}
+
+.related-job-list li{
+
+    border-bottom:1px solid #eee;
+
+}
+
+.related-job-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.related-job-list a{
+
+    display:block;
+
+    padding:14px 0;
+
+    color:#0B57D0;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.related-job-list a:hover{
+
+    padding-left:10px;
+
+}
