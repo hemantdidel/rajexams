@@ -1,20 +1,17 @@
 [
   {
-    "title": "Rajasthan CET Graduation Result",
-    "url": "pages/results/cet.html",
-    "date": "22 Jul 2026",
+    "title": "REET Level 1 Result 2026",
+    "slug": "reet-2026",
     "new": true
   },
   {
-    "title": "REET Result 2026",
-    "url": "pages/results/reet.html",
-    "date": "21 Jul 2026",
+    "title": "SSC GD Result 2026",
+    "slug": "ssc-gd-2026",
     "new": true
   },
   {
-    "title": "SSC GD Result",
-    "url": "pages/results/ssc-gd.html",
-    "date": "20 Jul 2026",
+    "title": "RPSC RAS Result 2026",
+    "slug": "rpsc-ras-2026",
     "new": false
   }
 ]
