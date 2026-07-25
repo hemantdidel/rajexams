@@ -1,22 +1,69 @@
-/* ==========================================
+/* ==========================================================
    RajExams Main App
-========================================== */
+========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* Breaking News */
     loadBreakingNews();
 
-    loadList("data/jobs.json", "latestJobsList");
+    /* Homepage Latest Jobs */
+    if (document.getElementById("latestJobsList")) {
+        loadList(
+            "data/jobs.json",
+            "latestJobsList",
+            10
+        );
+    }
 
-    loadList("data/results.json", "latestResultsList");
+    /* Homepage Latest Results */
+    if (document.getElementById("latestResultsList")) {
+        loadList(
+            "data/results.json",
+            "latestResultsList",
+            10
+        );
+    }
 
-    loadList("data/admit-cards.json", "latestAdmitList");
+    /* Homepage Latest Admit Cards */
+    if (document.getElementById("latestAdmitList")) {
+        loadList(
+            "data/admit-cards.json",
+            "latestAdmitList",
+            10
+        );
+    }
+
+    /* Jobs Page */
+    if (document.getElementById("jobsList")) {
+        loadList(
+            "data/jobs.json",
+            "jobsList"
+        );
+    }
+
+    /* Results Page */
+    if (document.getElementById("resultsList")) {
+        loadList(
+            "data/results.json",
+            "resultsList"
+        );
+    }
+
+    /* Admit Cards Page */
+    if (document.getElementById("admitCardsList")) {
+        loadList(
+            "data/admit-cards.json",
+            "admitCardsList"
+        );
+    }
 
 });
 
-/* ==========================================
-Breaking News
-========================================== */
+
+/* ==========================================================
+   Breaking News
+========================================================== */
 
 async function loadBreakingNews() {
 
@@ -42,20 +89,19 @@ async function loadBreakingNews() {
 
     catch (error) {
 
-        console.error(error);
+        console.error("Breaking News Error:", error);
 
     }
 
 }
 
+
+/* ==========================================================
+   Components Loaded
+========================================================== */
+
 document.addEventListener("componentsLoaded", () => {
 
     loadBreakingNews();
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    loadJobs();
 
 });
