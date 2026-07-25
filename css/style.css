@@ -1093,3 +1093,55 @@ MASTER PAGE LIST
     line-height:1.8;
 
 }
+
+/*==========================================
+JOB PAGE
+==========================================*/
+
+.job-page{
+
+    padding-bottom:40px;
+
+}
+
+.job-section{
+
+    margin:25px 0;
+
+}
+
+.job-card{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.section-title{
+
+    background:#0B57D0;
+
+    color:#fff;
+
+    padding:14px 18px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.section-content{
+
+    padding:20px;
+
+    line-height:1.8;
+
+}
