@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Homepage Latest Jobs */
     if (document.getElementById("latestJobsList")) {
         loadList(
-            "data/jobs.json",
+            "data/jobs-list.json",
             "latestJobsList",
             10
         );
