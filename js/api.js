@@ -1,36 +1,44 @@
-/* ==========================================
-Load Jobs
-========================================== */
+/* ==========================================================
+Generic List Loader
+========================================================== */
 
-async function loadJobs() {
+async function loadList(jsonFile, containerId, limit = null) {
 
     try {
 
-        const response = await fetch("data/jobs.json");
+        const response = await fetch(jsonFile);
 
-        const jobs = await response.json();
+        if (!response.ok) {
+            throw new Error("Unable to load " + jsonFile);
+        }
 
-        const list = document.getElementById("jobsList");
+        let data = await response.json();
 
-        if (!list) return;
+        if (limit) {
+            data = data.slice(0, limit);
+        }
 
-        list.innerHTML = "";
+        const container = document.getElementById(containerId);
 
-        jobs.forEach(job => {
+        if (!container) return;
 
-            list.innerHTML += `
+        container.innerHTML = "";
+
+        data.forEach(item => {
+
+            container.innerHTML += `
 
             <li>
 
-                <a href="${job.slug}.html">
+                <a href="${item.slug}.html">
 
-                    <span>
+                    <span>➜ ${item.title}</span>
 
-                        ➜ ${job.title}
-
-                    </span>
-
-                    ${job.new ? '<span class="new-tag">NEW</span>' : ""}
+                    ${
+                        item.new
+                        ? '<span class="new-tag">NEW</span>'
+                        : ""
+                    }
 
                 </a>
 
@@ -44,7 +52,7 @@ async function loadJobs() {
 
     catch(error){
 
-        console.error("Jobs Loading Error :", error);
+        console.error(error);
 
     }
 
