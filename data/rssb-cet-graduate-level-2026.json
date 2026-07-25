@@ -1,0 +1,117 @@
+{
+  "title": "RSSB CET Graduate Level Recruitment 2026",
+
+  "organization": "Rajasthan Staff Selection Board (RSSB)",
+
+  "badge": "🔥 Latest Recruitment",
+
+  "description": "RSSB has released the notification for CET Graduate Level Recruitment 2026.",
+
+  "shortInformation": "Rajasthan Staff Selection Board has invited online applications for CET Graduate Level Recruitment 2026. Interested candidates can check eligibility, age limit, important dates, syllabus and apply online before the last date.",
+
+  "importantDates": {
+    "applicationBegin": "Coming Soon",
+    "lastDate": "Coming Soon",
+    "feePayment": "Coming Soon",
+    "correctionDate": "As Per Schedule",
+    "examDate": "Notify Later",
+    "admitCard": "Before Exam"
+  },
+
+  "applicationFee": {
+    "general": "As Per Notification",
+    "obc": "As Per Notification",
+    "scst": "As Per Notification",
+    "paymentMode": "Online"
+  },
+
+  "ageLimit": {
+    "minimum": "18 Years",
+    "maximum": "40 Years",
+    "relaxation": "As Per RSSB Rules"
+  },
+
+  "vacancy": {
+    "postName": "CET Graduate Level",
+    "totalPosts": "As Per Notification",
+    "qualification": "Bachelor Degree"
+  },
+
+  "eligibility": [
+    "Bachelor Degree from a recognized University.",
+    "Candidate must satisfy RSSB eligibility rules.",
+    "Read the official notification before applying."
+  ],
+
+  "selectionProcess": [
+    "Written Examination",
+    "Document Verification",
+    "Medical Examination",
+    "Final Merit List"
+  ],
+
+  "examPattern": [
+    {
+      "subject": "General Knowledge",
+      "questions": 40,
+      "marks": 80
+    },
+    {
+      "subject": "Reasoning",
+      "questions": 30,
+      "marks": 60
+    },
+    {
+      "subject": "General Science",
+      "questions": 30,
+      "marks": 60
+    }
+  ],
+
+  "salary": "As Per Government Rules",
+
+  "documents": [
+    "Passport Size Photograph",
+    "Signature",
+    "Aadhaar Card",
+    "Graduation Marksheet",
+    "Caste Certificate",
+    "Domicile Certificate"
+  ],
+
+  "importantLinks": {
+    "apply": "#",
+    "notification": "#",
+    "officialWebsite": "#"
+  },
+
+  "faq": [
+    {
+      "question": "Who can apply?",
+      "answer": "Candidates fulfilling eligibility criteria."
+    },
+    {
+      "question": "How to apply?",
+      "answer": "Apply through the official website."
+    },
+    {
+      "question": "What is the age limit?",
+      "answer": "18 Years to 40 Years."
+    }
+  ],
+
+  "relatedJobs": [
+    {
+      "title": "RSSB Patwari Recruitment 2026",
+      "slug": "rssb-patwari-2026"
+    },
+    {
+      "title": "REET Recruitment 2026",
+      "slug": "reet-2026"
+    },
+    {
+      "title": "RPSC 2nd Grade Recruitment 2026",
+      "slug": "rpsc-2nd-grade-2026"
+    }
+  ]
+}
