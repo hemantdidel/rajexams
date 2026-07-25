@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Jobs Page */
     if (document.getElementById("jobsList")) {
         loadList(
-            "data/jobs.json",
+            "data/jobs-list.json",
             "jobsList"
         );
     }
