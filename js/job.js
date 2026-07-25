@@ -33,38 +33,53 @@ async function getJSON(path) {
 
 async function loadJob() {
 
-    try {
+try {
 
-        // URL Example:
-        // job.html?slug=rssb-cet-graduate-level-2026
 
-        const params = new URLSearchParams(window.location.search);
+    // Get slug from HTML filename
+    const slug = window.location.pathname
+        .split("/")
+        .pop()
+        .replace(".html","");
 
-        const slug = params.get("slug");
 
-        if (!slug) {
+    console.log("Current Job Slug:", slug);
 
-            throw new Error("Job slug not found.");
 
-        }
 
-        const job = await getJSON(
+    if (!slug) {
 
-            `data/jobs/${slug}.json`
-
-        );
-
-        renderJob(job);
+        throw new Error("Job slug not found.");
 
     }
 
-    catch (error) {
 
-        console.error(error);
 
-        showError(error.message);
+    const job = await getJSON(
 
-    }
+        `data/jobs/${slug}.json`
+
+    );
+
+
+
+    // add slug for related jobs
+    job.slug = slug;
+
+
+    renderJob(job);
+
+
+
+}
+
+catch (error) {
+
+    console.error(error);
+
+    showError(error.message);
+
+}
 
 }
 
