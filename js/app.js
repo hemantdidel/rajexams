@@ -68,6 +68,16 @@ if (document.getElementById("answerKeyList")) {
     );
 
 }
+   /* Admissions Page */
+
+if (document.getElementById("admissionsList")) {
+
+    loadList(
+        "data/admissions.json",
+        "admissionsList"
+    );
+
+}
 
 });
 
