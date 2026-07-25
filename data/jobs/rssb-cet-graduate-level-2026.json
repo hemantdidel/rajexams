@@ -1,117 +1,155 @@
 {
-  "title": "RSSB CET Graduate Level Recruitment 2026",
+  "slug": "rssb-cet-graduate-level-2026",
 
-  "organization": "Rajasthan Staff Selection Board (RSSB)",
+  "title": "RSSB CET Graduate Level Recruitment 2026",
 
   "badge": "🔥 Latest Recruitment",
 
-  "description": "RSSB has released the notification for CET Graduate Level Recruitment 2026.",
+  "organization": "Rajasthan Staff Selection Board (RSSB)",
 
-  "shortInformation": "Rajasthan Staff Selection Board has invited online applications for CET Graduate Level Recruitment 2026. Interested candidates can check eligibility, age limit, important dates, syllabus and apply online before the last date.",
+  "description": "Rajasthan Staff Selection Board (RSSB) has released the notification for Common Eligibility Test (Graduate Level) Recruitment 2026.",
+
+  "shortInformation": "RSSB has invited online applications for CET Graduate Level 2026. Interested candidates should read the official notification carefully before applying.",
 
   "importantDates": {
-    "applicationBegin": "Coming Soon",
-    "lastDate": "Coming Soon",
-    "feePayment": "Coming Soon",
-    "correctionDate": "As Per Schedule",
-    "examDate": "Notify Later",
+    "applicationBegin": "04 July 2026",
+    "lastDate": "02 August 2026",
+    "feePayment": "02 August 2026",
+    "correctionDate": "To Be Announced",
+    "examDate": "December 2026",
     "admitCard": "Before Exam"
   },
 
   "applicationFee": {
-    "general": "As Per Notification",
-    "obc": "As Per Notification",
-    "scst": "As Per Notification",
-    "paymentMode": "Online"
+    "general": "₹600",
+    "obc": "₹400",
+    "scst": "₹400",
+    "paymentMode": "Online / E-Mitra"
   },
 
   "ageLimit": {
     "minimum": "18 Years",
     "maximum": "40 Years",
-    "relaxation": "As Per RSSB Rules"
+    "relaxation": "As per RSSB Rules"
   },
 
-  "vacancy": {
-    "postName": "CET Graduate Level",
-    "totalPosts": "As Per Notification",
-    "qualification": "Bachelor Degree"
+  "salary": {
+    "payLevel": "As Per Post",
+    "basicPay": "Post Wise",
+    "gradePay": "Applicable",
+    "allowances": "As Per Rajasthan Government Rules"
   },
+
+  "vacancyDetails": [
+    {
+      "post": "Graduate Level CET",
+      "vacancies": "As Per Notification"
+    }
+  ],
 
   "eligibility": [
-    "Bachelor Degree from a recognized University.",
-    "Candidate must satisfy RSSB eligibility rules.",
-    "Read the official notification before applying."
+    {
+      "post": "Graduate Level CET",
+      "qualification": "Bachelor Degree in any discipline from a recognized University."
+    }
   ],
 
   "selectionProcess": [
     "Written Examination",
     "Document Verification",
-    "Medical Examination",
     "Final Merit List"
   ],
 
   "examPattern": [
     {
       "subject": "General Knowledge",
-      "questions": 40,
-      "marks": 80
+      "questions": "50",
+      "marks": "100"
     },
     {
       "subject": "Reasoning",
-      "questions": 30,
-      "marks": 60
+      "questions": "50",
+      "marks": "100"
     },
     {
       "subject": "General Science",
-      "questions": 30,
-      "marks": 60
+      "questions": "50",
+      "marks": "100"
+    },
+    {
+      "subject": "General Hindi & English",
+      "questions": "50",
+      "marks": "100"
     }
   ],
 
-  "salary": "As Per Government Rules",
-
-  "documents": [
-    "Passport Size Photograph",
-    "Signature",
-    "Aadhaar Card",
-    "Graduation Marksheet",
-    "Caste Certificate",
-    "Domicile Certificate"
+  "importantLinks": [
+    {
+      "title": "Apply Online",
+      "url": "#"
+    },
+    {
+      "title": "Official Notification",
+      "url": "#"
+    },
+    {
+      "title": "Official Website",
+      "url": "https://rssb.rajasthan.gov.in/"
+    }
   ],
 
-  "importantLinks": {
-    "apply": "#",
-    "notification": "#",
-    "officialWebsite": "#"
-  },
+  "documentsRequired": [
+    "Recent Passport Size Photograph",
+    "Signature",
+    "Aadhaar Card",
+    "Graduation Marksheet / Degree",
+    "Category Certificate (If Applicable)",
+    "Domicile Certificate (If Applicable)"
+  ],
+
+  "howToApply": [
+    "Read the official notification carefully.",
+    "Visit the official website.",
+    "Complete One Time Registration (OTR) if required.",
+    "Fill the online application form.",
+    "Upload all required documents.",
+    "Pay the application fee.",
+    "Submit the form and take a printout."
+  ],
+
+  "importantInstructions": [
+    "Read the official notification before applying.",
+    "Fill all details carefully.",
+    "Upload valid documents only.",
+    "Keep a printout of the application form.",
+    "Visit the official website regularly for updates."
+  ],
 
   "faq": [
     {
-      "question": "Who can apply?",
-      "answer": "Candidates fulfilling eligibility criteria."
-    },
-    {
-      "question": "How to apply?",
-      "answer": "Apply through the official website."
+      "question": "Who can apply for RSSB CET Graduate Level 2026?",
+      "answer": "Candidates having a Bachelor's Degree from a recognized University can apply."
     },
     {
       "question": "What is the age limit?",
-      "answer": "18 Years to 40 Years."
+      "answer": "18 to 40 years. Age relaxation is applicable as per RSSB rules."
+    },
+    {
+      "question": "How can I apply?",
+      "answer": "Candidates can apply online through the official RSSB website."
     }
   ],
 
-  "relatedJobs": [
-    {
-      "title": "RSSB Patwari Recruitment 2026",
-      "slug": "rssb-patwari-2026"
-    },
-    {
-      "title": "REET Recruitment 2026",
-      "slug": "reet-2026"
-    },
-    {
-      "title": "RPSC 2nd Grade Recruitment 2026",
-      "slug": "rpsc-2nd-grade-2026"
-    }
-  ]
+  "author": {
+    "name": "RajExams Team",
+    "description": "Government Exam Information Portal"
+  },
+
+  "disclaimer": [
+    "This information is provided for educational purposes only.",
+    "Candidates should verify all details from the official notification before applying.",
+    "RajExams is not responsible for any changes made by the recruiting authority."
+  ],
+
+  "lastUpdated": "25 July 2026"
 }
