@@ -691,3 +691,229 @@ margin-left:8px;
 font-weight:bold;
 
 }
+
+/* ==========================================================
+INNER PAGES
+========================================================== */
+
+/* Page Banner */
+
+.page-banner{
+
+    background:#0b57d0;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:45px 20px;
+
+}
+
+.page-banner h1{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+.page-banner p{
+
+    font-size:17px;
+
+    opacity:.95;
+
+}
+
+/* Search */
+
+.page-search{
+
+    padding:25px 0;
+
+}
+
+.page-search input{
+
+    width:100%;
+
+    height:52px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    padding:0 18px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.page-search input:focus{
+
+    border-color:#0b57d0;
+
+    box-shadow:0 0 0 3px rgba(11,87,208,.12);
+
+}
+
+/* List */
+
+.page-list{
+
+    padding-bottom:30px;
+
+}
+
+.list-card{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+}
+
+.list-header{
+
+    background:#0b57d0;
+
+    color:#fff;
+
+    padding:15px 20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.list-card ul{
+
+    list-style:none;
+
+}
+
+.list-card li{
+
+    border-bottom:1px dashed #ddd;
+
+}
+
+.list-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.list-card li a{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 20px;
+
+    color:#222;
+
+    transition:.25s;
+
+}
+
+.list-card li a:hover{
+
+    background:#f5f9ff;
+
+    color:#0b57d0;
+
+    padding-left:28px;
+
+}
+
+/* NEW Tag */
+
+.new-tag{
+
+    background:#d60000;
+
+    color:#fff;
+
+    padding:3px 8px;
+
+    border-radius:4px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+/* Pagination */
+
+.pagination-section{
+
+    padding:20px 0 50px;
+
+}
+
+.pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.pagination a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid #ddd;
+
+    border-radius:6px;
+
+    background:#fff;
+
+    transition:.25s;
+
+}
+
+.pagination a:hover{
+
+    background:#0b57d0;
+
+    color:#fff;
+
+}
+
+.pagination .active{
+
+    background:#0b57d0;
+
+    color:#fff;
+
+    border-color:#0b57d0;
+
+}
