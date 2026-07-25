@@ -1145,3 +1145,51 @@ JOB PAGE
     line-height:1.8;
 
 }
+
+/*==========================================
+INFO TABLE
+==========================================*/
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table tr{
+
+    border-bottom:1px solid #e5e5e5;
+
+}
+
+.info-table td{
+
+    padding:14px 16px;
+
+}
+
+.info-table td:first-child{
+
+    font-weight:600;
+
+    width:45%;
+
+    background:#fafafa;
+
+}
+
+.info-table td:last-child{
+
+    color:#0B57D0;
+
+    font-weight:600;
+
+}
+
+.info-table tr:last-child{
+
+    border-bottom:none;
+
+}
