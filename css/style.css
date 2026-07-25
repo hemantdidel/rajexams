@@ -1075,3 +1075,21 @@ MASTER EXAM PAGE
     background:#fafafa;
 
 }
+
+/* ==========================================================
+MASTER PAGE LIST
+========================================================== */
+
+.job-list{
+
+    padding-left:22px;
+
+}
+
+.job-list li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
