@@ -58,6 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+   /* Answer Key Page */
+
+if (document.getElementById("answerKeyList")) {
+
+    loadList(
+        "data/answer-key.json",
+        "answerKeyList"
+    );
+
+}
+
 });
 
 
