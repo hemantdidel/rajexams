@@ -15,43 +15,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================
-   Breaking News
+Breaking News
 ========================================== */
 
 async function loadBreakingNews() {
-
-    const container = document.getElementById("breakingNews");
-
-    if (!container) return;
 
     try {
 
         const response = await fetch("data/breaking-news.json");
 
-        if (!response.ok) {
-            throw new Error("breaking-news.json not found");
-        }
-
         const news = await response.json();
 
-        container.innerHTML = news.map(item => {
+        const marquee = document.getElementById("breakingNews");
 
-            return `
-                <a href="${item.url}">
-                    ${item.title}
-                </a>
-            `;
+        if (!marquee) return;
 
-        }).join(" &nbsp;&nbsp; | &nbsp;&nbsp; ");
+        marquee.innerHTML = news.map(item =>
+
+            `<a href="${item.url}">
+                ${item.title}
+            </a>`
+
+        ).join(" &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; ");
 
     }
 
     catch (error) {
 
-        console.error("Breaking News Error:", error);
-
-        container.innerHTML = "";
+        console.error(error);
 
     }
 
 }
+
+document.addEventListener("componentsLoaded", () => {
+
+    loadBreakingNews();
+
+});
