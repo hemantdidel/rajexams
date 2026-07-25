@@ -1,1 +1,17 @@
-
+[
+  {
+    "title": "Rajasthan PTET Admission 2026",
+    "slug": "rajasthan-ptet-2026",
+    "new": true
+  },
+  {
+    "title": "CUET UG Admission 2026",
+    "slug": "cuet-ug-2026",
+    "new": true
+  },
+  {
+    "title": "Rajasthan BSTC Admission 2026",
+    "slug": "rajasthan-bstc-2026",
+    "new": false
+  }
+]
