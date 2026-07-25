@@ -78,6 +78,16 @@ if (document.getElementById("admissionsList")) {
     );
 
 }
+   /* Syllabus Page */
+
+if (document.getElementById("syllabusList")) {
+
+    loadList(
+        "data/syllabus.json",
+        "syllabusList"
+    );
+
+}
 
 });
 
