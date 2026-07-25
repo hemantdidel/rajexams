@@ -1,27 +1,27 @@
 [
   {
-    "title": "Rajasthan Police Constable Recruitment 2026",
-    "url": "jobs/rssb-cet-graduate-level-2026.html",
-    "new": true
-  },
-  {
-    "title": "SSC CGL 2026 Online Form",
-    "url": "jobs/ssc-cgl-2026.html",
+    "title": "SSC CGL Recruitment 2026",
+    "slug": "ssc-cgl-2026",
     "new": true
   },
   {
     "title": "Railway NTPC Recruitment 2026",
-    "url": "jobs/railway-ntpc-2026.html",
-    "new": false
-  },
-  {
-    "title": "RPSC 2nd Grade Teacher Recruitment 2026",
-    "url": "jobs/rpsc-2nd-grade-teacher-2026.html",
+    "slug": "railway-ntpc-2026",
     "new": true
   },
   {
-    "title": "Rajasthan High Court Recruitment 2026",
-    "url": "jobs/rajasthan-high-court-2026.html",
+    "title": "Rajasthan Police Constable Recruitment 2026",
+    "slug": "rajasthan-police-constable-2026",
+    "new": true
+  },
+  {
+    "title": "RPSC 2nd Grade Teacher Recruitment 2026",
+    "slug": "rpsc-2nd-grade-teacher-2026",
+    "new": false
+  },
+  {
+    "title": "REET Recruitment 2026",
+    "slug": "reet-2026",
     "new": false
   }
 ]
