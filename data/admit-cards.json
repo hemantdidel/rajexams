@@ -1,20 +1,17 @@
 [
   {
-    "title": "RRB NTPC Admit Card",
-    "url": "pages/admit-card/rrb.html",
-    "date": "22 Jul 2026",
+    "title": "SSC CGL Admit Card 2026",
+    "slug": "ssc-cgl-2026",
     "new": true
   },
   {
-    "title": "SSC CGL Admit Card",
-    "url": "pages/admit-card/ssc.html",
-    "date": "21 Jul 2026",
-    "new": false
+    "title": "REET Admit Card 2026",
+    "slug": "reet-2026",
+    "new": true
   },
   {
-    "title": "REET Admit Card",
-    "url": "pages/admit-card/reet.html",
-    "date": "20 Jul 2026",
+    "title": "Railway NTPC Admit Card 2026",
+    "slug": "railway-ntpc-2026",
     "new": false
   }
 ]
