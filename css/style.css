@@ -148,6 +148,236 @@ section{
 }
 
 /* ==========================================================
+HEADER
+========================================================== */
+
+/* Top Bar */
+
+.top-bar{
+
+    background:#0b3d91;
+
+    color:#fff;
+
+    font-size:14px;
+
+}
+
+.top-bar-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:40px;
+
+}
+
+.top-links{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.top-links a{
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.top-links a:hover{
+
+    color:#ffd54f;
+
+}
+
+/* Main Header */
+
+.header-main{
+
+    background:#ffffff;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.header-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+    gap:25px;
+
+}
+
+/* Logo */
+
+.site-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.site-logo img{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+.logo-text h1{
+
+    font-size:34px;
+
+    color:#0b57d0;
+
+    line-height:1;
+
+    font-weight:700;
+
+}
+
+.logo-text span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+/* Search */
+
+.header-search{
+
+    display:flex;
+
+    width:420px;
+
+    max-width:100%;
+
+    border:2px solid #0b57d0;
+
+    border-radius:6px;
+
+    overflow:hidden;
+
+}
+
+.header-search input{
+
+    flex:1;
+
+    padding:12px 15px;
+
+    border:none;
+
+    font-size:15px;
+
+}
+
+.header-search button{
+
+    width:55px;
+
+    background:#0b57d0;
+
+    color:#fff;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.header-search button:hover{
+
+    background:#084298;
+
+}
+
+/* Navigation */
+
+.main-nav{
+
+    background:#0b57d0;
+
+}
+
+.main-nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.main-nav li{
+
+    list-style:none;
+
+}
+
+.main-nav a{
+
+    display:block;
+
+    color:#fff;
+
+    padding:15px 22px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.main-nav a:hover,
+
+.main-nav a.active{
+
+    background:#084298;
+
+}
+
+/* Sticky Header */
+
+.site-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#fff;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
 BREAKING NEWS
 ========================================================== */
 
@@ -208,186 +438,6 @@ BREAKING NEWS
 .breaking-marquee a:hover{
 
     text-decoration:underline;
-
-}
-
-/* ==========================================================
-   QUICK LINKS
-========================================================== */
-
-.quick-links{
-
-    padding:25px 0;
-
-}
-
-.quick-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:15px;
-
-}
-
-.quick-card{
-
-    color:#fff;
-
-    text-align:center;
-
-    padding:20px 10px;
-
-    border-radius:10px;
-
-    transition:.3s;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-
-}
-
-.quick-card:hover{
-
-    transform:translateY(-4px);
-
-}
-
-.quick-card span{
-
-    font-size:34px;
-
-    display:block;
-
-    margin-bottom:10px;
-
-}
-
-.quick-card h3{
-
-    font-size:18px;
-
-    font-weight:700;
-
-}
-
-/* Colors */
-
-.jobs{background:#0d6efd;}
-
-.results{background:#198754;}
-
-.admit{background:#dc3545;}
-
-.answer{background:#fd7e14;}
-
-.admission{background:#6f42c1;}
-
-.syllabus{background:#20c997;}
-
-.current{background:#0dcaf0;}
-
-.notes{background:#6c757d;}
-
-@media(max-width:768px){
-
-.quick-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-/* =========================================
-LATEST UPDATES
-========================================= */
-
-.latest-updates{
-
-background:#fff;
-
-border-top:1px solid #ddd;
-
-border-bottom:1px solid #ddd;
-
-}
-
-.updates-wrapper{
-
-display:flex;
-
-align-items:center;
-
-overflow:hidden;
-
-}
-
-.updates-label{
-
-background:#d60000;
-
-color:#fff;
-
-padding:12px 20px;
-
-font-weight:700;
-
-white-space:nowrap;
-
-}
-
-.updates-track{
-
-flex:1;
-
-overflow:hidden;
-
-}
-
-.updates-content{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:18px;
-
-padding-left:100%;
-
-white-space:nowrap;
-
-animation:ticker 28s linear infinite;
-
-}
-
-.updates-content a{
-
-color:#0056b3;
-
-font-weight:600;
-
-}
-
-.updates-content span{
-
-color:#999;
-
-}
-
-@keyframes ticker{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-100%{
-
-transform:translateX(-100%);
-
-}
 
 }
 
