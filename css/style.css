@@ -917,3 +917,161 @@ INNER PAGES
     border-color:#0b57d0;
 
 }
+/* ==========================================================
+MASTER EXAM PAGE
+========================================================== */
+
+.breadcrumb{
+
+    background:#f5f7fb;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.breadcrumb .container{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    font-size:14px;
+
+}
+
+.breadcrumb a{
+
+    color:#0b57d0;
+
+}
+
+.job-header{
+
+    padding:35px 0;
+
+}
+
+.job-title-box{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:30px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+
+}
+
+.job-badge{
+
+    display:inline-block;
+
+    background:#d50000;
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    margin-bottom:15px;
+
+}
+
+.job-title-box h1{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.job-title-box p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.job-section{
+
+    margin-bottom:25px;
+
+}
+
+.job-card{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.section-title{
+
+    background:#0b57d0;
+
+    color:#fff;
+
+    padding:15px 20px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.section-content{
+
+    padding:22px;
+
+    line-height:1.8;
+
+}
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table th{
+
+    background:#eef5ff;
+
+}
+
+.info-table th,
+.info-table td{
+
+    border:1px solid #ddd;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+.info-table tr:nth-child(even){
+
+    background:#fafafa;
+
+}
