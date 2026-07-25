@@ -41,6 +41,8 @@ function renderJob(job){
 
     document.title = job.title;
 
+    document.getElementById("breadcrumbTitle").textContent = job.title;
+
     document.getElementById("jobTitle").textContent = job.title;
 
     document.getElementById("jobBadge").textContent = job.badge;
