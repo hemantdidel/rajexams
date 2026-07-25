@@ -1454,3 +1454,375 @@ RELATED JOBS
     padding-left:10px;
 
 }
+
+/*==========================================
+SHARE BUTTONS
+==========================================*/
+
+.share-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.share-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.share-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+.telegram{
+
+    background:#229ED9;
+
+}
+
+.facebook{
+
+    background:#1877F2;
+
+}
+
+.copy{
+
+    background:#495057;
+
+}
+
+/*==========================================
+PAGE TOOLS
+==========================================*/
+
+.page-tools{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.print-btn{
+
+    background:#0B57D0;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.print-btn:hover{
+
+    background:#084298;
+
+}
+
+.last-updated{
+
+    font-size:15px;
+
+    color:#666;
+
+    font-weight:600;
+
+}
+
+@media(max-width:768px){
+
+.page-tools{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+}
+
+/*==========================================
+AUTHOR
+==========================================*/
+
+.author-box{
+
+    text-align:center;
+
+    padding:10px;
+
+}
+
+.author-box h3{
+
+    color:#0B57D0;
+
+    margin-bottom:8px;
+
+    font-size:24px;
+
+}
+
+.author-box p{
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/*==========================================
+DISCLAIMER
+==========================================*/
+
+.disclaimer-box{
+
+    background:#FFF8E1;
+
+    border-left:5px solid #FFC107;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+FOOTER
+========================================== */
+
+.site-footer{
+
+    background:#1f2937;
+
+    color:#e5e7eb;
+
+    margin-top:40px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    padding:50px 0 35px;
+
+}
+
+.footer-column h3{
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.footer-column p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+.footer-column ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-column ul li:last-child{
+
+    margin-bottom:0;
+
+}
+
+.footer-column ul li a{
+
+    color:#d1d5db;
+
+    transition:.3s;
+
+}
+
+.footer-column ul li a:hover{
+
+    color:#ffffff;
+
+    padding-left:6px;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.footer-social a{
+
+    color:#d1d5db;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    color:#ffffff;
+
+    padding-left:6px;
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    padding:20px 0;
+
+}
+
+.footer-bottom p{
+
+    margin:6px 0;
+
+    font-size:14px;
+
+    color:#cbd5e1;
+
+}
+
+/* ==========================================
+Responsive Footer
+========================================== */
+
+@media(max-width:992px){
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:576px){
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    padding:35px 0;
+
+}
+
+.footer-column{
+
+    text-align:center;
+
+}
+
+.footer-social{
+
+    align-items:center;
+
+}
+
+.footer-column ul li a:hover,
+
+.footer-social a:hover{
+
+    padding-left:0;
+
+}
+
+.footer-bottom{
+
+    padding:18px 10px;
+
+}
+
+.footer-bottom p{
+
+    font-size:13px;
+
+}
+
+}
