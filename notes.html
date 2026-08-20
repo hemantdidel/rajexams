@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 
 <head>
 
@@ -9,13 +9,16 @@
 <title>Study Notes | RajExams</title>
 
 <meta name="description"
-content="Free Study Notes PDF for Rajasthan & India Government Exams.">
+content="Free Study Notes for Rajasthan and India Government Exams.">
 
 <link rel="icon" href="favicon.ico">
 
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
+
+<!-- Notes Page CSS -->
+<link rel="stylesheet" href="css/notes.css">
 
 </head>
 
@@ -27,98 +30,133 @@ content="Free Study Notes PDF for Rajasthan & India Government Exams.">
 <!-- Breaking News -->
 <div id="breaking-news"></div>
 
-<!-- Banner -->
+
+<!-- Page Banner -->
 
 <section class="page-banner">
 
-<div class="container">
+    <div class="container">
 
-<h1>Study Notes</h1>
+        <h1>Study Notes</h1>
 
-<p>
+        <p>
+            Government Exam Preparation के लिए महत्वपूर्ण Study Notes
+        </p>
 
-Free Notes for Government Exam Preparation
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
-<!-- Search -->
 
-<section class="page-search">
+<!-- Notes Reader -->
 
-<div class="container">
+<section class="notes-reader-section">
 
-<input
-type="search"
-id="notesSearch"
-placeholder="Search Study Notes...">
+    <div class="container">
 
-</div>
+        <div class="notes-reader">
+
+
+            <!-- =========================
+                 LEFT SIDEBAR
+            ========================== -->
+
+            <aside class="notes-sidebar">
+
+                <div class="notes-sidebar-header">
+
+                    <h2>Study Notes</h2>
+
+                    <span id="notesCount">
+                        0 Notes
+                    </span>
+
+                </div>
+
+
+                <!-- Search -->
+
+                <div class="notes-search">
+
+                    <input
+                        type="search"
+                        id="notesSearch"
+                        placeholder="🔍 नोट्स खोजें..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <!-- Notes List -->
+
+                <div class="notes-list-wrapper">
+
+                    <ul id="notesList">
+
+                        <!-- notes.js से data आएगा -->
+
+                    </ul>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =========================
+                 RIGHT CONTENT
+            ========================== -->
+
+            <main class="notes-content">
+
+                <div
+                    id="notesContent"
+                    class="notes-content-inner">
+
+                    <!-- Default Message -->
+
+                    <div class="notes-welcome">
+
+                        <div class="notes-welcome-icon">
+                            📚
+                        </div>
+
+                        <h2>
+                            Study Notes
+                        </h2>
+
+                        <p>
+                            बाईं तरफ से कोई भी Note चुनें
+                            और उसका पूरा content यहाँ पढ़ें।
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- Notes List -->
-
-<section class="page-list">
-
-<div class="container">
-
-<div class="list-card">
-
-<div class="list-header">
-
-Latest Study Notes
-
-</div>
-
-<ul id="notesList">
-
-<!-- Dynamic Data -->
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Pagination -->
-
-<section class="pagination-section">
-
-<div class="container">
-
-<div class="pagination">
-
-<a href="#">«</a>
-
-<a class="active" href="#">1</a>
-
-<a href="#">2</a>
-
-<a href="#">3</a>
-
-<a href="#">4</a>
-
-<a href="#">»</a>
-
-</div>
-
-</div>
-
-</section>
 
 <!-- Footer -->
 
 <div id="footer"></div>
 
+
+<!-- JS -->
+
 <script src="js/loader.js"></script>
 <script src="js/api.js"></script>
 <script src="js/app.js"></script>
+
+<!-- Notes JS -->
+<script src="js/notes.js"></script>
 
 </body>
 
