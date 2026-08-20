@@ -150,5 +150,109 @@
     "subject": "Art & Culture",
     "path": "notes/rajasthan/art-culture/राजस्थानी_साहित्यकार.html",
     "new": false
+  },
+  {
+    "title": "राजस्थान का भौगोलिक स्वरूप",
+    "slug": "rajasthan-ka-bhaugolik-swaroop",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_का_भौगोलिक_स्वरूप.html",
+    "new": true
+  },
+  {
+    "title": "अपवाह तंत्र – झीले, नदियाँ, बाँध",
+    "slug": "apwah-tantra-jhile-nadiyan-bandh",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/अपवाह_तंत्र_–_झीले,_नदियाँ,_बाँध.html",
+    "new": true
+  },
+  {
+    "title": "धात्विक एवं अधात्विक खनिज",
+    "slug": "dhatvik-evam-adhatvik-khanij",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/धात्विक_एवं_अधात्विक_खनिज.html",
+    "new": true
+  },
+  {
+    "title": "मृदाएँ एवं मृदा संरक्षण",
+    "slug": "mridaen-evam-mrida-sanrakshan",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/मृदाएँ_एवं_मृदा_संरक्षण.html",
+    "new": true
+  },
+  {
+    "title": "जनसंख्या, जनसंख्या घनत्व, साक्षरता और लिंगानुपात",
+    "slug": "jansankhya-ghanatva-saksharta-linganupat",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/जनसंख्या,_जनसंख्या_घनत्व,_साक्षरता_और_लिंगानुपात.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान की जनजातियाँ एवं जनजातीय क्षेत्र",
+    "slug": "rajasthan-ki-janajatiyan-evam-janajatiya-kshetra",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_की_जनजातियाँ_एवं_जनजातियाँ_क्षेत्र.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान में यातायात के साधन",
+    "slug": "rajasthan-me-yatayat-ke-sadhan",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_में_यातायात_के_साधन.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान के पर्यटन स्थल",
+    "slug": "rajasthan-ke-paryatan-sthal",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_के_पर्यटन_स्थल.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान की प्रमुख फसलें",
+    "slug": "rajasthan-ki-pramukh-faslen",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_की_प्रमुख_फसलें.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान की स्थिति एवं विस्तार",
+    "slug": "rajasthan-ki-sthiti-evam-vistar",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_की_स्थिति_एवं_विस्तार.html",
+    "new": true
+  },
+  {
+    "title": "मानसून तंत्र एवं जलवायु",
+    "slug": "mansoon-tantra-evam-jalvayu",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/मानसून_तंत्र_एवं_जलवायु.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान के ऊर्जा संसाधन",
+    "slug": "rajasthan-ke-urja-sansadhan",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_के_ऊर्जा_संसाधन.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान की वन सम्पदा, वन्य जीव-जन्तु, वन्य जीव संरक्षण एवं अभयारण्य",
+    "slug": "rajasthan-ki-van-sampada-vanya-jeev",
+    "category": "Rajasthan",
+    "subject": "Geography",
+    "path": "notes/rajasthan/geography/राजस्थान_की_वन_सम्पदा,_वन्य_जीव_जन्तु,_वन्य_जीव_संरक्षण_एवं_अभयारण्य.html",
+    "new": true
   }
 ]
