@@ -58,46 +58,37 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-   /* Answer Key Page */
+    /* Answer Key Page */
+    if (document.getElementById("answerKeyList")) {
+        loadList(
+            "data/answer-key.json",
+            "answerKeyList"
+        );
+    }
 
-if (document.getElementById("answerKeyList")) {
+    /* Admissions Page */
+    if (document.getElementById("admissionsList")) {
+        loadList(
+            "data/admissions.json",
+            "admissionsList"
+        );
+    }
 
-    loadList(
-        "data/answer-key.json",
-        "answerKeyList"
-    );
-
-}
-   /* Admissions Page */
-
-if (document.getElementById("admissionsList")) {
-
-    loadList(
-        "data/admissions.json",
-        "admissionsList"
-    );
-
-}
-   /* Syllabus Page */
-
-if (document.getElementById("syllabusList")) {
-
-    loadList(
-        "data/syllabus.json",
+    /* Syllabus Page */
+    if (document.getElementById("syllabusList")) {
+        loadList(
+            "data/syllabus.json",
         "syllabusList"
-    );
+        );
+    }
 
-}
-   /* Current Affairs Page */
-
-if (document.getElementById("currentAffairsList")) {
-
-    loadList(
-        "data/current-affairs.json",
-        "currentAffairsList"
-    );
-
-}
+    /* Current Affairs Page */
+    if (document.getElementById("currentAffairsList")) {
+        loadList(
+            "data/current-affairs.json",
+            "currentAffairsList"
+        );
+    }
 
 });
 
@@ -110,11 +101,14 @@ async function loadBreakingNews() {
 
     try {
 
-        const response = await fetch("data/breaking-news.json");
+        const response =
+            await fetch("data/breaking-news.json");
 
-        const news = await response.json();
+        const news =
+            await response.json();
 
-        const marquee = document.getElementById("breakingNews");
+        const marquee =
+            document.getElementById("breakingNews");
 
         if (!marquee) return;
 
@@ -124,13 +118,18 @@ async function loadBreakingNews() {
                 ${item.title}
             </a>`
 
-        ).join(" &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; ");
+        ).join(
+            " &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; "
+        );
 
     }
 
     catch (error) {
 
-        console.error("Breaking News Error:", error);
+        console.error(
+            "Breaking News Error:",
+            error
+        );
 
     }
 
@@ -141,8 +140,11 @@ async function loadBreakingNews() {
    Components Loaded
 ========================================================== */
 
-document.addEventListener("componentsLoaded", () => {
+document.addEventListener(
+    "componentsLoaded",
+    () => {
 
-    loadBreakingNews();
+        loadBreakingNews();
 
-});
+    }
+);
