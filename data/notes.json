@@ -1,97 +1,154 @@
 [
   {
-    "title": "राजस्थान के प्रमुख मेले",
-    "file": "राजस्थान_के_प्रमुख_मेले.html",
+    "title": "प्रमुख राजस्थानी कृतियाँ",
+    "slug": "pramukh-rajasthani-kritiyan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/प्रमुख_राजस्थानी_कृतियाँ.html",
     "new": true
-  },
-  {
-    "title": "राजस्थान के प्रमुख लोक नाट्य",
-    "file": "राजस्थान_के_प्रमुख_लोक_नाट्य.html",
-    "new": true
-  },
-  {
-    "title": "राजस्थान की प्रमुख हस्तकला",
-    "file": "राजस्थान_की_प्रमुख_हस्तकला.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान के प्रमुख त्योहार एवं लोककलाएँ",
-    "file": "राजस्थान_के_प्रमुख_त्योहार_एवं_लोककलाएँ.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान की प्रमुख वेशभूषा एवं आभूषण",
-    "file": "राजस्थान_की_प्रमुख_वेशभूषा_एवं_आभूषण.html",
-    "new": false
   },
   {
     "title": "राजस्थान की प्रमुख चित्रकला",
-    "file": "राजस्थान_की_प्रमुख_चित्रकला.html",
+    "slug": "rajasthan-ki-pramukh-chitrakala",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_प्रमुख_चित्रकला.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान की प्रमुख वेशभूषा एवं आभूषण",
+    "slug": "rajasthan-ki-pramukh-veshbhoosha-evam-aabhushan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_प्रमुख_वेशभूषा_एवं_आभूषण.html",
     "new": false
   },
   {
-    "title": "राजस्थान के प्रमुख रीति-रिवाज",
-    "file": "राजस्थान_के_प्रमुख_रीति_रिवाज.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थानी संत साहित्य एवं लोक साहित्य",
-    "file": "राजस्थानी_संत_साहित्य_एवं_लोक_साहित्य.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थानी साहित्यकार",
-    "file": "राजस्थानी साहित्यकार.html",
-    "new": false
-  },
-  {
-    "title": "प्रमुख राजस्थानी कृतियाँ",
-    "file": "प्रमुख_राजस्थानी_कृतियाँ.html",
+    "title": "राजस्थान की प्रमुख हस्तकला",
+    "slug": "rajasthan-ki-pramukh-hastkala",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_प्रमुख_हस्तकला.html",
     "new": false
   },
   {
     "title": "राजस्थान की भाषा एवं बोलियाँ",
-    "file": "राजस्थान_की_भाषा_एवं_बोलियाँ.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान की हस्तकला एवं लोककलाएँ",
-    "file": "राजस्थान_की_हस्तकला_एवं_लोककलाएँ.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान के प्रमुख लोक देवता",
-    "file": "राजस्थान_के_प्रमुख_लोक_देवता.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान के प्रमुख दुर्ग",
-    "file": "राजस्थान_के_प्रमुख_दुर्ग.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान की स्थापत्य कला — हवेलियाँ",
-    "file": "राजस्थान_की_स्थापत्य_कला_हवेलियाँ.html",
-    "new": false
-  },
-  {
-    "title": "राजस्थान की स्थापत्य कला — प्रमुख बावड़ियाँ",
-    "file": "राजस्थान_की_स्थापत्य_कला_प्रमुख_बावड़ियाँ.html",
+    "slug": "rajasthan-ki-bhasha-evam-boliyan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_भाषा_एवं_बोलियाँ.html",
     "new": false
   },
   {
     "title": "राजस्थान की स्थापत्य कला — प्रमुख छतरियाँ",
-    "file": "राजस्थान_की_स्थापत्य_कला_प्रमुख_छतरियाँ.html",
+    "slug": "rajasthan-ki-sthapatya-kala-pramukh-chhatariyan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_स्थापत्य_कला_प्रमुख_छतरियाँ.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान की स्थापत्य कला — प्रमुख बावड़ियाँ",
+    "slug": "rajasthan-ki-sthapatya-kala-pramukh-bawadiyan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_स्थापत्य_कला_प्रमुख_बावड़ियाँ.html",
     "new": false
   },
   {
     "title": "राजस्थान की स्थापत्य कला — प्रमुख मंदिर",
-    "file": "राजस्थान_की_स्थापत्य_कला_प्रमुख_मंदिर.html",
+    "slug": "rajasthan-ki-sthapatya-kala-pramukh-mandir",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_स्थापत्य_कला_प्रमुख_मंदिर.html",
     "new": false
   },
   {
-    "title": "राजस्थान की स्थापत्य कला — महल",
-    "file": "राजस्थान_की_स्थापत्य_कला_महल.html",
+    "title": "राजस्थान की स्थापत्य कला — प्रमुख महल",
+    "slug": "rajasthan-ki-sthapatya-kala-pramukh-mahal",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_स्थापत्य_कला_महल.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान की स्थापत्य कला — हवेलियाँ",
+    "slug": "rajasthan-ki-sthapatya-kala-haveliyan",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_स्थापत्य_कला_हवेलियाँ.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान की हस्तकला एवं लोककलाएँ",
+    "slug": "rajasthan-ki-hastkala-evam-lokkalayen",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_की_हस्तकला_एवं_लोककलाएँ.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान के प्रमुख त्योहार एवं लोककलाएँ",
+    "slug": "rajasthan-ke-pramukh-tyohar-evam-lokkala",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_त्योहार_एवं_लोककलाएँ.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान के प्रमुख दुर्ग",
+    "slug": "rajasthan-ke-pramukh-durg",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_दुर्ग.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान के प्रमुख मेले",
+    "slug": "rajasthan-ke-pramukh-mele",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_मेले.html",
+    "new": true
+  },
+  {
+    "title": "राजस्थान के प्रमुख रीति-रिवाज",
+    "slug": "rajasthan-ke-pramukh-riti-rivaj",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_रीति_रिवाज.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान के प्रमुख लोक देवता",
+    "slug": "rajasthan-ke-pramukh-lok-devta",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_लोक_देवता.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थान के प्रमुख लोक नाट्य",
+    "slug": "rajasthan-ke-pramukh-lok-natya",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थान_के_प्रमुख_लोक_नाट्य.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थानी संत साहित्य एवं लोक साहित्य",
+    "slug": "rajasthani-sant-sahitya-evam-lok-sahitya",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थानी_संत_साहित्य_एवं_लोक_साहित्य.html",
+    "new": false
+  },
+  {
+    "title": "राजस्थानी साहित्यकार",
+    "slug": "rajasthani-sahityakar",
+    "category": "Rajasthan",
+    "subject": "Art & Culture",
+    "path": "notes/rajasthan/art-culture/राजस्थानी साहित्यकार.html",
     "new": false
   }
 ]
