@@ -98,16 +98,6 @@ if (document.getElementById("currentAffairsList")) {
     );
 
 }
-   /* Notes Page */
-
-if (document.getElementById("notesList")) {
-
-    loadList(
-        "data/notes.json",
-        "notesList"
-    );
-
-}
 
 });
 
