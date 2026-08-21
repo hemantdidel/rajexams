@@ -1,42 +1,70 @@
 /* ==========================================================
-   RajExams — Study Notes
-   Left List + Right Content Layout
+   RajExams - Study Notes
+   Notes Reader Layout
 ========================================================== */
+
+
+/* ==========================================================
+   Notes Top Header
+========================================================== */
+
+.notes-top {
+    padding: 18px 0 14px;
+    background: var(--bg-color, #ffffff);
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.notes-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.notes-heading h1 {
+    margin: 0 0 4px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.notes-heading p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted, #6b7280);
+}
 
 
 /* ==========================================================
    Search
 ========================================================== */
 
-.notes-search-section {
-    padding: 20px 0;
+.notes-search {
+    width: 330px;
+    flex-shrink: 0;
 }
 
-.notes-search-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-#notesSearch {
+.notes-search input {
     width: 100%;
-    height: 48px;
-    padding: 0 18px;
+    height: 42px;
+    padding: 0 15px;
 
-    border: 1px solid #d9dee7;
+    border: 1px solid var(--border-color, #dcdfe4);
     border-radius: 8px;
 
-    background: #ffffff;
+    background: var(--card-bg, #ffffff);
+    color: var(--text-color, #1f2937);
 
-    font-size: 15px;
+    font-size: 14px;
+
     outline: none;
 
-    box-sizing: border-box;
-
-    transition: 0.2s ease;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
-#notesSearch:focus {
-    border-color: #2563eb;
+.notes-search input:focus {
+    border-color: var(--primary-color, #2563eb);
 
     box-shadow:
         0 0 0 3px rgba(37, 99, 235, 0.10);
@@ -44,165 +72,102 @@
 
 
 /* ==========================================================
-   Main Notes Section
+   Notes Reader Section
 ========================================================== */
 
-.notes-section {
-    padding: 0 0 40px;
+.notes-reader {
+    padding: 18px 0 30px;
 }
 
 .notes-layout {
-
-    max-width: 1200px;
-    margin: 0 auto;
-
     display: grid;
 
-    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-columns: 300px minmax(0, 1fr);
 
-    gap: 20px;
+    gap: 16px;
 
-    align-items: start;
+    min-height: 600px;
+
+    align-items: stretch;
 }
 
 
 /* ==========================================================
-   LEFT SIDEBAR
+   Left Sidebar
 ========================================================== */
 
 .notes-sidebar {
-
-    background: #ffffff;
-
-    border: 1px solid #e1e5eb;
+    border: 1px solid var(--border-color, #e5e7eb);
 
     border-radius: 10px;
 
+    background: var(--card-bg, #ffffff);
+
     overflow: hidden;
+
+    height: calc(100vh - 190px);
+
+    min-height: 500px;
+
+    max-height: 760px;
 
     position: sticky;
 
-    top: 20px;
-
-    max-height: calc(100vh - 40px);
-
-    display: flex;
-
-    flex-direction: column;
+    top: 15px;
 }
 
 
 /* Sidebar Header */
 
 .notes-sidebar-header {
+    height: 48px;
 
-    padding: 17px 18px;
+    padding: 0 15px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 10px;
+    background: var(--surface-color, #f8fafc);
 
-    border-bottom: 1px solid #e8ebf0;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
 
-    background: #f8fafc;
-}
-
-.notes-sidebar-header h2 {
-
-    margin: 0;
-
-    font-size: 18px;
+    font-size: 15px;
 
     font-weight: 700;
-
-    color: #172033;
 }
 
-#notesCount {
-
+.notes-sidebar-header span:last-child {
     font-size: 12px;
 
-    color: #64748b;
+    font-weight: 500;
 
-    white-space: nowrap;
+    color: var(--text-muted, #6b7280);
 }
 
 
 /* ==========================================================
-   FILTERS
-========================================================== */
-
-.notes-filter {
-
-    padding: 10px 12px 0;
-}
-
-.notes-filter:last-of-type {
-
-    padding-bottom: 10px;
-}
-
-.notes-filter select {
-
-    width: 100%;
-
-    height: 40px;
-
-    padding: 0 12px;
-
-    border: 1px solid #dfe4eb;
-
-    border-radius: 7px;
-
-    background: #ffffff;
-
-    color: #334155;
-
-    font-size: 14px;
-
-    outline: none;
-
-    cursor: pointer;
-}
-
-.notes-filter select:focus {
-
-    border-color: #2563eb;
-}
-
-
-/* ==========================================================
-   NOTES LIST
+   Notes List
 ========================================================== */
 
 #notesList {
+    height: calc(100% - 48px);
 
     overflow-y: auto;
-
-    flex: 1;
-
-    min-height: 0;
 }
 
 
 /* Scrollbar */
 
 #notesList::-webkit-scrollbar {
-
     width: 6px;
 }
 
 #notesList::-webkit-scrollbar-track {
-
-    background: #f8fafc;
+    background: transparent;
 }
 
 #notesList::-webkit-scrollbar-thumb {
-
     background: #cbd5e1;
 
     border-radius: 10px;
@@ -210,191 +175,169 @@
 
 
 /* ==========================================================
-   NOTE LIST ITEM
+   Category
 ========================================================== */
 
-.note-list-item {
+.notes-category {
+    padding: 12px 14px 6px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    color: var(--text-muted, #64748b);
+}
+
+
+/* ==========================================================
+   Subject
+========================================================== */
+
+.notes-subject {
+    padding: 8px 14px 5px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--primary-color, #2563eb);
+}
+
+
+/* ==========================================================
+   Individual Note
+========================================================== */
+
+.note-item {
+    display: block;
 
     width: 100%;
 
-    min-height: 68px;
-
-    padding: 11px 13px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
+    padding: 10px 14px;
 
     border: 0;
 
-    border-bottom: 1px solid #edf0f4;
+    border-left: 3px solid transparent;
 
-    background: #ffffff;
+    background: transparent;
+
+    color: var(--text-color, #374151);
 
     text-align: left;
 
-    cursor: pointer;
+    font-size: 13px;
 
-    position: relative;
+    line-height: 1.45;
+
+    cursor: pointer;
 
     transition:
         background 0.18s ease,
+        color 0.18s ease,
         border-color 0.18s ease;
 }
 
-.note-list-item:hover {
+.note-item:hover {
+    background: var(--hover-bg, #f1f5f9);
 
-    background: #f7f9fc;
+    color: var(--primary-color, #2563eb);
 }
 
-.note-list-item.active {
+.note-item.active {
+    background: var(--active-bg, #eff6ff);
 
-    background: #eef4ff;
+    color: var(--primary-color, #2563eb);
 
-    box-shadow:
-        inset 3px 0 0 #2563eb;
-}
-
-
-/* Icon */
-
-.note-list-icon {
-
-    width: 36px;
-
-    height: 36px;
-
-    min-width: 36px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 7px;
-
-    background: #f1f5f9;
-
-    font-size: 17px;
-}
-
-.note-list-item.active .note-list-icon {
-
-    background: #dbeafe;
-}
-
-
-/* Info */
-
-.note-list-info {
-
-    min-width: 0;
-
-    flex: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-}
-
-
-/* Title */
-
-.note-list-title {
-
-    color: #1e293b;
-
-    font-size: 14px;
+    border-left-color: var(--primary-color, #2563eb);
 
     font-weight: 600;
-
-    line-height: 1.4;
-
-    display: -webkit-box;
-
-    -webkit-line-clamp: 2;
-
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-}
-
-.note-list-item.active .note-list-title {
-
-    color: #1d4ed8;
 }
 
 
-/* Meta */
+/* New Badge */
 
-.note-list-meta {
+.note-new {
+    display: inline-block;
 
-    color: #94a3b8;
+    margin-left: 6px;
 
-    font-size: 11px;
-
-    line-height: 1.3;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-
-/* NEW */
-
-.note-new-badge {
-
-    flex-shrink: 0;
-
-    padding: 3px 6px;
+    padding: 2px 5px;
 
     border-radius: 4px;
 
-    background: #dcfce7;
+    background: #16a34a;
 
-    color: #15803d;
+    color: #ffffff;
 
     font-size: 9px;
 
-    font-weight: 700;
+    line-height: 1;
+
+    vertical-align: middle;
 }
 
 
 /* ==========================================================
-   RIGHT CONTENT
+   Right Content
 ========================================================== */
 
 .notes-content {
-
     min-width: 0;
 
-    background: #ffffff;
-
-    border: 1px solid #e1e5eb;
+    border: 1px solid var(--border-color, #e5e7eb);
 
     border-radius: 10px;
 
-    min-height: 650px;
+    background: var(--card-bg, #ffffff);
 
     overflow: hidden;
+
+    min-height: 600px;
 }
 
 
 /* ==========================================================
-   WELCOME
+   Note Content Area
+========================================================== */
+
+.note-content-area {
+    height: 100%;
+
+    min-height: 600px;
+
+    overflow-y: auto;
+
+    padding: 25px 30px;
+}
+
+
+/* Content Scrollbar */
+
+.note-content-area::-webkit-scrollbar {
+    width: 7px;
+}
+
+.note-content-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.note-content-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================================
+   Welcome Screen
 ========================================================== */
 
 .notes-welcome {
-
-    min-height: 650px;
+    min-height: 540px;
 
     display: flex;
 
@@ -406,16 +349,13 @@
 
     text-align: center;
 
-    padding: 40px;
-
-    color: #64748b;
+    padding: 30px;
 }
 
 .notes-welcome-icon {
+    width: 65px;
 
-    width: 70px;
-
-    height: 70px;
+    height: 65px;
 
     display: flex;
 
@@ -423,174 +363,86 @@
 
     justify-content: center;
 
-    border-radius: 50%;
+    margin-bottom: 15px;
+
+    border-radius: 16px;
 
     background: #eff6ff;
 
-    font-size: 32px;
-
-    margin-bottom: 18px;
+    font-size: 30px;
 }
 
 .notes-welcome h2 {
-
     margin: 0 0 8px;
 
-    color: #1e293b;
-
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .notes-welcome p {
+    max-width: 430px;
 
     margin: 0;
 
-    max-width: 450px;
-
-    line-height: 1.7;
+    color: var(--text-muted, #6b7280);
 
     font-size: 14px;
+
+    line-height: 1.6;
 }
 
 
 /* ==========================================================
-   NOTE VIEWER
+   Loaded Note
 ========================================================== */
 
-.note-viewer {
-
+.note-page {
     width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
 }
 
-
-/* Viewer Header */
-
-.note-viewer-header {
-
-    padding: 22px 26px;
-
-    border-bottom: 1px solid #e5e7eb;
-
-    background: #f8fafc;
-}
-
-.note-viewer-header h2 {
-
-    margin: 7px 0 0;
-
-    color: #172033;
-
-    font-size: 24px;
-
-    line-height: 1.4;
-}
-
-
-/* Category */
-
-.note-category {
-
-    display: inline-block;
-
-    padding: 4px 9px;
-
-    border-radius: 5px;
-
-    background: #e0ecff;
-
-    color: #1d4ed8;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-
-/* ==========================================================
-   NOTE BODY
-========================================================== */
-
-.note-viewer-body {
-
-    padding: 28px;
-
-    color: #263244;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* Headings inside imported HTML */
-
-.note-viewer-body h1 {
+.note-page h1 {
+    margin: 0 0 20px;
 
     font-size: 28px;
 
     line-height: 1.35;
-
-    margin: 0 0 20px;
-
-    color: #172033;
 }
 
-.note-viewer-body h2 {
+.note-page h2 {
+    margin-top: 25px;
 
-    font-size: 23px;
+    margin-bottom: 12px;
 
-    margin: 25px 0 12px;
-
-    color: #1e293b;
+    font-size: 21px;
 }
 
-.note-viewer-body h3 {
+.note-page h3 {
+    margin-top: 20px;
 
-    font-size: 19px;
+    margin-bottom: 10px;
 
-    margin: 22px 0 10px;
-
-    color: #334155;
+    font-size: 18px;
 }
 
-.note-viewer-body h4 {
+.note-page p {
+    font-size: 15px;
 
-    font-size: 17px;
+    line-height: 1.8;
 
-    margin: 18px 0 8px;
+    margin: 0 0 14px;
 }
 
+.note-page ul,
+.note-page ol {
+    padding-left: 25px;
 
-/* Paragraph */
-
-.note-viewer-body p {
-
-    margin: 0 0 16px;
+    line-height: 1.8;
 }
 
-
-/* Lists */
-
-.note-viewer-body ul,
-.note-viewer-body ol {
-
-    margin: 0 0 18px;
-
-    padding-left: 28px;
-}
-
-.note-viewer-body li {
-
-    margin-bottom: 7px;
-}
-
-
-/* Tables */
-
-.note-viewer-body table {
-
+.note-page table {
     width: 100%;
 
     border-collapse: collapse;
@@ -598,388 +450,140 @@
     margin: 20px 0;
 
     font-size: 14px;
-
-    overflow: hidden;
 }
 
-.note-viewer-body th,
-.note-viewer-body td {
+.note-page th,
+.note-page td {
+    padding: 9px 10px;
 
-    padding: 10px 12px;
-
-    border: 1px solid #dfe4eb;
+    border: 1px solid var(--border-color, #dfe3e8);
 
     text-align: left;
-
-    vertical-align: top;
 }
 
-.note-viewer-body th {
-
-    background: #f1f5f9;
+.note-page th {
+    background: #f8fafc;
 
     font-weight: 700;
 }
 
 
-/* Images */
-
-.note-viewer-body img {
-
-    max-width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    margin: 18px auto;
-
-    border-radius: 6px;
-}
-
-
-/* Links */
-
-.note-viewer-body a {
-
-    color: #2563eb;
-
-    text-decoration: none;
-}
-
-.note-viewer-body a:hover {
-
-    text-decoration: underline;
-}
-
-
-/* Code */
-
-.note-viewer-body pre {
-
-    max-width: 100%;
-
-    overflow-x: auto;
-
-    padding: 15px;
-
-    background: #f1f5f9;
-
-    border-radius: 7px;
-}
-
-.note-viewer-body code {
-
-    font-family:
-        Consolas,
-        Monaco,
-        monospace;
-}
-
-
 /* ==========================================================
-   LOADING
-========================================================== */
-
-.note-content-loading {
-
-    min-height: 500px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #64748b;
-}
-
-.note-content-loading p {
-
-    margin-top: 14px;
-
-    font-size: 14px;
-}
-
-
-/* Spinner */
-
-.notes-spinner {
-
-    width: 34px;
-
-    height: 34px;
-
-    border: 3px solid #e2e8f0;
-
-    border-top-color: #2563eb;
-
-    border-radius: 50%;
-
-    animation:
-        notesSpin 0.8s linear infinite;
-}
-
-@keyframes notesSpin {
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-
-/* ==========================================================
-   EMPTY / ERROR
+   Empty / Search Result
 ========================================================== */
 
 .notes-empty {
-
-    padding: 30px 15px;
+    padding: 40px 20px;
 
     text-align: center;
 
-    color: #94a3b8;
+    color: var(--text-muted, #6b7280);
 
     font-size: 14px;
 }
 
-.notes-error {
-
-    padding: 25px 15px;
-
-    text-align: center;
-
-    color: #dc2626;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-.note-content-error {
-
-    padding: 50px 30px;
-
-    text-align: center;
-}
-
-.note-content-error h2 {
-
-    margin-bottom: 12px;
-
-    color: #dc2626;
-}
-
-.note-content-error p {
-
-    color: #64748b;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
 
 /* ==========================================================
-   DESKTOP LARGE
-========================================================== */
-
-@media (min-width: 1400px) {
-
-    .notes-layout {
-
-        max-width: 1250px;
-
-        grid-template-columns: 380px minmax(0, 1fr);
-    }
-
-}
-
-
-/* ==========================================================
-   TABLET
+   Mobile
 ========================================================== */
 
 @media (max-width: 900px) {
 
-    .notes-layout {
-
-        grid-template-columns: 300px minmax(0, 1fr);
-
-        gap: 14px;
-    }
-
-    .note-viewer-header {
-
-        padding: 18px 20px;
-    }
-
-    .note-viewer-body {
-
-        padding: 22px;
-    }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 700px) {
-
-    .notes-search-section {
-
-        padding: 14px 0;
-    }
-
-
-    .notes-layout {
-
-        display: flex;
-
+    .notes-top-row {
         flex-direction: column;
+
+        align-items: stretch;
 
         gap: 12px;
     }
 
+    .notes-search {
+        width: 100%;
+    }
+
+    .notes-layout {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
 
     .notes-sidebar {
-
-        width: 100%;
-
         position: relative;
 
         top: auto;
 
-        max-height: 420px;
+        height: auto;
+
+        min-height: 0;
+
+        max-height: 320px;
     }
 
+    #notesList {
+        height: auto;
+
+        max-height: 270px;
+    }
 
     .notes-content {
-
-        width: 100%;
-
         min-height: 500px;
     }
 
+    .note-content-area {
+        min-height: 500px;
 
-    .notes-welcome {
-
-        min-height: 450px;
-
-        padding: 30px 20px;
-    }
-
-
-    .note-viewer-header {
-
-        padding: 17px 18px;
-    }
-
-
-    .note-viewer-header h2 {
-
-        font-size: 20px;
-    }
-
-
-    .note-viewer-body {
-
-        padding: 18px;
-
-        font-size: 15px;
-
-        line-height: 1.7;
-    }
-
-
-    .note-viewer-body h1 {
-
-        font-size: 23px;
-    }
-
-
-    .note-viewer-body h2 {
-
-        font-size: 20px;
-    }
-
-
-    .note-viewer-body h3 {
-
-        font-size: 17px;
-    }
-
-
-    .note-viewer-body table {
-
-        display: block;
-
-        overflow-x: auto;
-
-        white-space: nowrap;
+        padding: 20px;
     }
 
 }
 
 
 /* ==========================================================
-   SMALL MOBILE
+   Small Mobile
 ========================================================== */
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
 
-    .notes-sidebar-header {
-
-        padding: 14px;
+    .notes-top {
+        padding: 14px 0 12px;
     }
 
-
-    .notes-sidebar-header h2 {
-
-        font-size: 16px;
+    .notes-heading h1 {
+        font-size: 23px;
     }
 
-
-    .note-list-item {
-
-        min-height: 62px;
-
-        padding: 9px 10px;
-    }
-
-
-    .note-list-icon {
-
-        width: 32px;
-
-        height: 32px;
-
-        min-width: 32px;
-
-        font-size: 15px;
-    }
-
-
-    .note-list-title {
-
+    .notes-heading p {
         font-size: 13px;
     }
 
-
-    .note-list-meta {
-
-        font-size: 10px;
+    .notes-reader {
+        padding-top: 12px;
     }
 
+    .notes-sidebar {
+        max-height: 280px;
+    }
 
-    .note-new-badge {
+    #notesList {
+        max-height: 232px;
+    }
 
-        display: none;
+    .note-content-area {
+        padding: 18px 15px;
+    }
+
+    .note-page h1 {
+        font-size: 23px;
+    }
+
+    .note-page h2 {
+        font-size: 19px;
+    }
+
+    .note-page p {
+        font-size: 14px;
+
+        line-height: 1.75;
     }
 
 }
