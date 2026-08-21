@@ -151,52 +151,6 @@ section{
 HEADER
 ========================================================== */
 
-/* Top Bar */
-
-.top-bar{
-
-    background:#0b3d91;
-
-    color:#fff;
-
-    font-size:14px;
-
-}
-
-.top-bar-inner{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    min-height:40px;
-
-}
-
-.top-links{
-
-    display:flex;
-
-    gap:18px;
-
-}
-
-.top-links a{
-
-    color:#fff;
-
-    transition:.3s;
-
-}
-
-.top-links a:hover{
-
-    color:#ffd54f;
-
-}
-
 /* Main Header */
 
 .header-main{
@@ -319,7 +273,7 @@ HEADER
 
 .main-nav{
 
-    background:#0b57d0;
+    background:#911f4ef2;
 
 }
 
