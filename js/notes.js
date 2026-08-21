@@ -1,610 +1,875 @@
 /* ==========================================================
    RajExams — Study Notes
-   Left Notes List + Right Content Viewer
+   Category → Subject → Notes
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const notesList = document.getElementById("notesList");
-    const noteContent = document.getElementById("noteContent");
-    const notesSearch = document.getElementById("notesSearch");
-    const notesCategory = document.getElementById("notesCategory");
-    const notesSubject = document.getElementById("notesSubject");
-    const notesCount = document.getElementById("notesCount");
+    const navigation = document.getElementById("notesNavigation");
+    const searchInput = document.getElementById("notesSearch");
 
-    if (!notesList || !noteContent) {
-        return;
-    }
+    const frame = document.getElementById("notesFrame");
+    const welcome = document.getElementById("notesWelcome");
 
-    let allNotes = [];
-    let filteredNotes = [];
+    const breadcrumb = document.getElementById("notesBreadcrumb");
+
+    const sidebar = document.querySelector(".notes-sidebar");
+    const sidebarToggle = document.getElementById("sidebarToggle");
+
+    const fullscreenButton =
+        document.getElementById("notesFullscreen");
+
+    if (!navigation) return;
 
 
     /* ======================================================
-       Load Notes JSON
+       LOAD NOTES JSON
     ====================================================== */
 
-    async function loadNotes() {
+    fetch("data/notes.json")
 
-        try {
-
-            const response = await fetch("data/notes.json");
+        .then(response => {
 
             if (!response.ok) {
                 throw new Error(
-                    `Notes JSON Error: ${response.status}`
+                    "Unable to load notes.json"
                 );
             }
 
-            allNotes = await response.json();
+            return response.json();
 
-            filteredNotes = [...allNotes];
+        })
 
-            updateCount();
+        .then(notes => {
 
-            renderNotes();
+            buildNotesNavigation(notes);
 
-            openNoteFromURL();
+            setupSearch(notes);
 
-        }
+        })
 
-        catch (error) {
-
-            console.error("Notes Load Error:", error);
-
-            notesList.innerHTML = `
-                <div class="notes-error">
-                    <strong>Notes Load नहीं हो सके।</strong>
-                    <br>
-                    कृपया थोड़ी देर बाद फिर प्रयास करें।
-                </div>
-            `;
-
-        }
-
-    }
-
-
-    /* ======================================================
-       Render Notes List
-    ====================================================== */
-
-    function renderNotes() {
-
-        if (!filteredNotes.length) {
-
-            notesList.innerHTML = `
-                <div class="notes-empty">
-                    कोई Note नहीं मिला।
-                </div>
-            `;
-
-            updateCount();
-
-            return;
-        }
-
-
-        notesList.innerHTML = filteredNotes.map((note, index) => {
-
-            return `
-
-                <button
-                    type="button"
-                    class="note-list-item"
-                    data-slug="${escapeHTML(note.slug)}"
-                    data-index="${index}"
-                >
-
-                    <span class="note-list-icon">
-                        📄
-                    </span>
-
-                    <span class="note-list-info">
-
-                        <span class="note-list-title">
-
-                            ${escapeHTML(note.title)}
-
-                        </span>
-
-
-                        <span class="note-list-meta">
-
-                            ${escapeHTML(note.category || "")}
-
-                            ${note.subject
-                                ? ` • ${escapeHTML(note.subject)}`
-                                : ""
-                            }
-
-                        </span>
-
-                    </span>
-
-
-                    ${
-                        note.new
-                            ? `<span class="note-new-badge">NEW</span>`
-                            : ""
-                    }
-
-                </button>
-
-            `;
-
-        }).join("");
-
-
-        /* Add Click Events */
-
-        const noteButtons =
-            notesList.querySelectorAll(".note-list-item");
-
-
-        noteButtons.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                const slug = button.dataset.slug;
-
-                const note = allNotes.find(
-                    item => item.slug === slug
-                );
-
-                if (note) {
-
-                    openNote(note);
-
-                }
-
-            });
-
-        });
-
-
-        updateCount();
-
-    }
-
-
-    /* ======================================================
-       Open Note
-    ====================================================== */
-
-    async function openNote(note) {
-
-        if (!note || !note.path) {
-            return;
-        }
-
-
-        /* Active item */
-
-        document
-            .querySelectorAll(".note-list-item")
-            .forEach(item => {
-
-                item.classList.remove("active");
-
-            });
-
-
-        const activeButton =
-            document.querySelector(
-                `.note-list-item[data-slug="${cssEscape(note.slug)}"]`
-            );
-
-
-        if (activeButton) {
-
-            activeButton.classList.add("active");
-
-        }
-
-
-        /* Loading */
-
-        noteContent.innerHTML = `
-
-            <div class="note-content-loading">
-
-                <div class="notes-spinner"></div>
-
-                <p>
-                    Note Loading...
-                </p>
-
-            </div>
-
-        `;
-
-
-        try {
-
-            const response = await fetch(note.path);
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    `HTTP Error: ${response.status}`
-                );
-
-            }
-
-
-            const html = await response.text();
-
-
-            /* ----------------------------------------------
-               Extract body content
-            ---------------------------------------------- */
-
-            const parser = new DOMParser();
-
-            const documentHTML =
-                parser.parseFromString(
-                    html,
-                    "text/html"
-                );
-
-
-            const body =
-                documentHTML.body;
-
-
-            let content = "";
-
-
-            if (body) {
-
-                content = body.innerHTML;
-
-            }
-
-
-            /* ----------------------------------------------
-               If body empty
-            ---------------------------------------------- */
-
-            if (!content.trim()) {
-
-                content = html;
-
-            }
-
-
-            /* ----------------------------------------------
-               Show Content
-            ---------------------------------------------- */
-
-            noteContent.innerHTML = `
-
-                <div class="note-viewer">
-
-                    <div class="note-viewer-header">
-
-                        <div>
-
-                            <span class="note-category">
-                                ${escapeHTML(note.category || "Study Notes")}
-                            </span>
-
-                            <h2>
-                                ${escapeHTML(note.title)}
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="note-viewer-body">
-
-                        ${content}
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-            /* ----------------------------------------------
-               URL Update
-            ---------------------------------------------- */
-
-            const newURL =
-                `${window.location.pathname}?note=${encodeURIComponent(note.slug)}`;
-
-            window.history.replaceState(
-                {},
-                "",
-                newURL
-            );
-
-
-            /* Scroll content to top */
-
-            noteContent.scrollTop = 0;
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-
-
-        catch (error) {
+        .catch(error => {
 
             console.error(
-                "Note Content Error:",
+                "Notes Loading Error:",
                 error
             );
 
-
-            noteContent.innerHTML = `
-
-                <div class="note-content-error">
-
-                    <h2>
-                        ⚠️ Note Load नहीं हो सका
-                    </h2>
-
-                    <p>
-                        इस Note की HTML file नहीं मिली।
-                    </p>
-
-                    <p>
-                        <strong>File:</strong>
-                        ${escapeHTML(note.path)}
-                    </p>
-
+            navigation.innerHTML = `
+                <div class="notes-empty-search">
+                    Notes load नहीं हो सके।
                 </div>
-
             `;
-
-        }
-
-    }
-
-
-    /* ======================================================
-       Search
-    ====================================================== */
-
-    function applyFilters() {
-
-        const searchText =
-            (notesSearch?.value || "")
-                .trim()
-                .toLowerCase();
-
-
-        const category =
-            notesCategory?.value || "all";
-
-
-        const subject =
-            notesSubject?.value || "all";
-
-
-        filteredNotes = allNotes.filter(note => {
-
-            const title =
-                (note.title || "").toLowerCase();
-
-
-            const noteCategory =
-                (note.category || "").toLowerCase();
-
-
-            const noteSubject =
-                (note.subject || "").toLowerCase();
-
-
-            const matchesSearch =
-                !searchText ||
-                title.includes(searchText) ||
-                noteCategory.includes(searchText) ||
-                noteSubject.includes(searchText);
-
-
-            const matchesCategory =
-                category === "all" ||
-                note.category === category;
-
-
-            const matchesSubject =
-                subject === "all" ||
-                note.subject === subject;
-
-
-            return (
-                matchesSearch &&
-                matchesCategory &&
-                matchesSubject
-            );
 
         });
 
 
-        renderNotes();
-
-    }
-
-
     /* ======================================================
-       Search Events
+       BUILD NAVIGATION
     ====================================================== */
 
-    if (notesSearch) {
+    function buildNotesNavigation(notes) {
 
-        notesSearch.addEventListener(
-            "input",
-            applyFilters
-        );
-
-    }
+        navigation.innerHTML = "";
 
 
-    if (notesCategory) {
+        /*
+         Expected JSON:
 
-        notesCategory.addEventListener(
-            "change",
-            applyFilters
-        );
-
-    }
-
-
-    if (notesSubject) {
-
-        notesSubject.addEventListener(
-            "change",
-            applyFilters
-        );
-
-    }
+         [
+           {
+             "category": "Rajasthan",
+             "subject": "Art & Culture",
+             "title": "राजस्थान के प्रमुख मेले",
+             "slug": "...",
+             "file": "notes/rajasthan/art-culture/....html"
+           }
+         ]
+        */
 
 
-    /* ======================================================
-       Notes Count
-    ====================================================== */
-
-    function updateCount() {
-
-        if (!notesCount) {
-            return;
-        }
+        const categories = {};
 
 
-        const count =
-            filteredNotes.length;
+        /* -----------------------------------------------
+           GROUP CATEGORY
+        ------------------------------------------------ */
+
+        notes.forEach(note => {
+
+            const category =
+                note.category || "Other";
+
+            const subject =
+                note.subject || "General";
 
 
-        notesCount.textContent =
-            `${count} Notes`;
+            if (!categories[category]) {
 
-    }
+                categories[category] = {};
 
-
-    /* ======================================================
-       Open Note From URL
-    ====================================================== */
-
-    function openNoteFromURL() {
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
+            }
 
 
-        const slug =
-            params.get("note");
+            if (!categories[category][subject]) {
+
+                categories[category][subject] = [];
+
+            }
 
 
-        if (slug) {
+            categories[category][subject].push(note);
 
-            const note =
-                allNotes.find(
-                    item => item.slug === slug
+        });
+
+
+        /* -----------------------------------------------
+           CREATE CATEGORY
+        ------------------------------------------------ */
+
+        Object.keys(categories).forEach(
+            categoryName => {
+
+                const categoryBox =
+                    document.createElement("div");
+
+                categoryBox.className =
+                    "notes-category";
+
+
+                /* Category Button */
+
+                const categoryButton =
+                    document.createElement("button");
+
+                categoryButton.type = "button";
+
+                categoryButton.className =
+                    "notes-category-button";
+
+
+                categoryButton.innerHTML = `
+
+                    <span class="category-left">
+
+                        <span class="category-icon">
+                            ${getCategoryIcon(categoryName)}
+                        </span>
+
+                        <span class="category-title">
+                            ${escapeHTML(categoryName)}
+                        </span>
+
+                    </span>
+
+                    <span class="category-arrow">
+                        ▼
+                    </span>
+
+                `;
+
+
+                /* Subjects Wrapper */
+
+                const subjects =
+                    document.createElement("div");
+
+                subjects.className =
+                    "notes-subjects";
+
+
+                const subjectsInner =
+                    document.createElement("div");
+
+                subjectsInner.className =
+                    "notes-subjects-inner";
+
+
+                /* -----------------------------------------
+                   CREATE SUBJECTS
+                ------------------------------------------ */
+
+                Object.keys(
+                    categories[categoryName]
+                ).forEach(subjectName => {
+
+
+                    const subjectBox =
+                        document.createElement("div");
+
+                    subjectBox.className =
+                        "notes-subject";
+
+
+                    /* Subject Button */
+
+                    const subjectButton =
+                        document.createElement("button");
+
+                    subjectButton.type = "button";
+
+                    subjectButton.className =
+                        "notes-subject-button";
+
+
+                    subjectButton.innerHTML = `
+
+                        <span class="subject-left">
+
+                            <span class="subject-dot"></span>
+
+                            <span class="subject-title">
+                                ${escapeHTML(subjectName)}
+                            </span>
+
+                        </span>
+
+                        <span class="subject-arrow">
+                            ▼
+                        </span>
+
+                    `;
+
+
+                    /* Notes wrapper */
+
+                    const notesList =
+                        document.createElement("div");
+
+                    notesList.className =
+                        "notes-list";
+
+
+                    const notesListInner =
+                        document.createElement("div");
+
+                    notesListInner.className =
+                        "notes-list-inner";
+
+
+                    /* -------------------------------------
+                       CREATE NOTES
+                    -------------------------------------- */
+
+                    categories[categoryName]
+                        [subjectName]
+                        .forEach(note => {
+
+                            const noteButton =
+                                document.createElement("button");
+
+                            noteButton.type = "button";
+
+                            noteButton.className =
+                                "note-item";
+
+
+                            noteButton.dataset.title =
+                                (
+                                    note.title || ""
+                                ).toLowerCase();
+
+                            noteButton.dataset.category =
+                                categoryName.toLowerCase();
+
+                            noteButton.dataset.subject =
+                                subjectName.toLowerCase();
+
+
+                            noteButton.innerHTML = `
+
+                                <span class="note-item-icon">
+                                    📄
+                                </span>
+
+                                <span class="note-item-title">
+                                    ${escapeHTML(
+                                        note.title ||
+                                        "Untitled Note"
+                                    )}
+                                </span>
+
+                            `;
+
+
+                            /* New badge */
+
+                            if (note.new === true) {
+
+                                noteButton.innerHTML += `
+
+                                    <span style="
+                                        margin-left:auto;
+                                        font-size:9px;
+                                        font-weight:700;
+                                        color:#4f46e5;
+                                        background:#eef2ff;
+                                        padding:2px 5px;
+                                        border-radius:5px;
+                                    ">
+                                        NEW
+                                    </span>
+
+                                `;
+
+                            }
+
+
+                            /* Open Note */
+
+                            noteButton.addEventListener(
+                                "click",
+                                () => {
+
+                                    openNote(
+                                        note,
+                                        categoryName,
+                                        subjectName,
+                                        noteButton
+                                    );
+
+                                }
+                            );
+
+
+                            notesListInner.appendChild(
+                                noteButton
+                            );
+
+                        });
+
+
+                    notesList.appendChild(
+                        notesListInner
+                    );
+
+
+                    subjectBox.appendChild(
+                        subjectButton
+                    );
+
+                    subjectBox.appendChild(
+                        notesList
+                    );
+
+
+                    subjectsInner.appendChild(
+                        subjectBox
+                    );
+
+
+                    /* Subject accordion */
+
+                    subjectButton.addEventListener(
+                        "click",
+                        event => {
+
+                            event.stopPropagation();
+
+                            subjectBox.classList.toggle(
+                                "open"
+                            );
+
+                            subjectButton.classList.toggle(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                });
+
+
+                subjects.appendChild(
+                    subjectsInner
                 );
 
 
-            if (note) {
+                categoryBox.appendChild(
+                    categoryButton
+                );
 
-                openNote(note);
+                categoryBox.appendChild(
+                    subjects
+                );
 
-                return;
+
+                subjectsInner
+                    .querySelectorAll(".notes-subject")
+                    .forEach(subject => {
+
+                        /*
+                         No automatic opening.
+                        */
+
+                    });
+
+
+                navigation.appendChild(
+                    categoryBox
+                );
+
+
+                /* Category accordion */
+
+                categoryButton.addEventListener(
+                    "click",
+                    () => {
+
+                        categoryBox.classList.toggle(
+                            "open"
+                        );
+
+                        categoryButton.classList.toggle(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    /* ======================================================
+       OPEN NOTE
+    ====================================================== */
+
+    function openNote(
+        note,
+        category,
+        subject,
+        button
+    ) {
+
+        /*
+         Priority:
+
+         1. file
+         2. url
+         3. slug
+        */
+
+        let file = note.file || note.url;
+
+
+        if (!file && note.slug) {
+
+            file = note.slug;
+
+        }
+
+
+        if (!file) {
+
+            console.error(
+                "Note file missing:",
+                note
+            );
+
+            return;
+
+        }
+
+
+        /* Remove previous active */
+
+        document
+            .querySelectorAll(".note-item.active")
+            .forEach(item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+        /* Active note */
+
+        button.classList.add(
+            "active"
+        );
+
+
+        /* Breadcrumb */
+
+        if (breadcrumb) {
+
+            breadcrumb.textContent =
+                `${category}  /  ${subject}  /  ${note.title}`;
+
+        }
+
+
+        /* Hide welcome */
+
+        if (welcome) {
+
+            welcome.style.display =
+                "none";
+
+        }
+
+
+        /* Show iframe */
+
+        if (frame) {
+
+            frame.hidden = false;
+
+            frame.classList.remove(
+                "loaded"
+            );
+
+
+            frame.src = file;
+
+
+            frame.onload = () => {
+
+                frame.classList.add(
+                    "loaded"
+                );
+
+            };
+
+        }
+
+
+        /* Mobile */
+
+        if (window.innerWidth <= 700) {
+
+            if (sidebar) {
+
+                sidebar.classList.remove(
+                    "mobile-open"
+                );
 
             }
 
         }
 
+    }
 
-        /* ----------------------------------------------
-           No URL Note → Open First Note
-        ---------------------------------------------- */
 
-        if (allNotes.length) {
+    /* ======================================================
+       SEARCH
+    ====================================================== */
 
-            openNote(allNotes[0]);
+    function setupSearch(notes) {
 
-        }
+        if (!searchInput) return;
+
+
+        searchInput.addEventListener(
+            "input",
+            () => {
+
+                const query =
+                    searchInput.value
+                        .trim()
+                        .toLowerCase();
+
+
+                const categories =
+                    document.querySelectorAll(
+                        ".notes-category"
+                    );
+
+
+                categories.forEach(
+                    category => {
+
+                        let categoryVisible =
+                            false;
+
+
+                        const subjects =
+                            category.querySelectorAll(
+                                ".notes-subject"
+                            );
+
+
+                        subjects.forEach(
+                            subject => {
+
+                                let subjectVisible =
+                                    false;
+
+
+                                const items =
+                                    subject.querySelectorAll(
+                                        ".note-item"
+                                    );
+
+
+                                items.forEach(
+                                    item => {
+
+                                        const text =
+                                            item.textContent
+                                                .toLowerCase();
+
+                                        const matched =
+                                            !query ||
+                                            text.includes(
+                                                query
+                                            );
+
+
+                                        item.classList.toggle(
+                                            "search-hidden",
+                                            !matched
+                                        );
+
+
+                                        if (matched) {
+
+                                            subjectVisible =
+                                                true;
+
+                                        }
+
+                                    }
+                                );
+
+
+                                subject.classList.toggle(
+                                    "search-hidden",
+                                    !subjectVisible
+                                );
+
+
+                                if (
+                                    query &&
+                                    subjectVisible
+                                ) {
+
+                                    subject.classList.add(
+                                        "open"
+                                    );
+
+                                    const button =
+                                        subject.querySelector(
+                                            ".notes-subject-button"
+                                        );
+
+                                    if (button) {
+
+                                        button.classList.add(
+                                            "active"
+                                        );
+
+                                    }
+
+                                }
+
+
+                                if (subjectVisible) {
+
+                                    categoryVisible =
+                                        true;
+
+                                }
+
+                            }
+                        );
+
+
+                        category.classList.toggle(
+                            "search-hidden",
+                            !categoryVisible
+                        );
+
+
+                        if (
+                            query &&
+                            categoryVisible
+                        ) {
+
+                            category.classList.add(
+                                "open"
+                            );
+
+                            const button =
+                                category.querySelector(
+                                    ".notes-category-button"
+                                );
+
+                            if (button) {
+
+                                button.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
 
     }
 
 
     /* ======================================================
-       HTML Escape
+       MOBILE SIDEBAR
+    ====================================================== */
+
+    if (
+        sidebarToggle &&
+        sidebar
+    ) {
+
+        sidebarToggle.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.toggle(
+                    "mobile-open"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ======================================================
+       FULLSCREEN
+    ====================================================== */
+
+    if (fullscreenButton) {
+
+        fullscreenButton.addEventListener(
+            "click",
+            () => {
+
+                const content =
+                    document.querySelector(
+                        ".notes-content"
+                    );
+
+                if (!content) return;
+
+
+                content.classList.toggle(
+                    "fullscreen"
+                );
+
+
+                fullscreenButton.textContent =
+                    content.classList.contains(
+                        "fullscreen"
+                    )
+                        ? "✕"
+                        : "⛶";
+
+            }
+        );
+
+    }
+
+
+    /* ======================================================
+       CATEGORY ICONS
+    ====================================================== */
+
+    function getCategoryIcon(category) {
+
+        const name =
+            category.toLowerCase();
+
+
+        if (
+            name.includes("rajasthan")
+        ) {
+
+            return "🏜️";
+
+        }
+
+
+        if (
+            name.includes("india")
+        ) {
+
+            return "🇮🇳";
+
+        }
+
+
+        if (
+            name.includes("science")
+        ) {
+
+            return "🔬";
+
+        }
+
+
+        if (
+            name.includes("computer")
+        ) {
+
+            return "💻";
+
+        }
+
+
+        if (
+            name.includes("math")
+        ) {
+
+            return "🧮";
+
+        }
+
+
+        return "📚";
+
+    }
+
+
+    /* ======================================================
+       HTML ESCAPE
     ====================================================== */
 
     function escapeHTML(value) {
 
-        if (value === undefined || value === null) {
-            return "";
-        }
-
-
         return String(value)
 
-            .replace(/&/g, "&amp;")
+            .replace(
+                /&/g,
+                "&amp;"
+            )
 
-            .replace(/</g, "&lt;")
+            .replace(
+                /</g,
+                "&lt;"
+            )
 
-            .replace(/>/g, "&gt;")
+            .replace(
+                />/g,
+                "&gt;"
+            )
 
-            .replace(/"/g, "&quot;")
+            .replace(
+                /"/g,
+                "&quot;"
+            )
 
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    /* ======================================================
-       CSS Escape
-    ====================================================== */
-
-    function cssEscape(value) {
-
-        if (
-            window.CSS &&
-            typeof window.CSS.escape === "function"
-        ) {
-
-            return window.CSS.escape(value);
-
-        }
-
-
-        return String(value)
-            .replace(/([^\w-])/g, "\\$1");
+            .replace(
+                /'/g,
+                "&#039;"
+            );
 
     }
-
-
-    /* ======================================================
-       Browser Back / Forward
-    ====================================================== */
-
-    window.addEventListener(
-        "popstate",
-        () => {
-
-            openNoteFromURL();
-
-        }
-    );
-
-
-    /* ======================================================
-       START
-    ====================================================== */
-
-    loadNotes();
 
 });
