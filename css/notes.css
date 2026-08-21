@@ -1,21 +1,197 @@
-/* ==========================================================
+/* =========================================================
    RajExams — Study Notes
-   Premium Notes Layout
-========================================================== */
+   Premium Category → Subject → Notes UI
+========================================================= */
 
 
-/* ==========================================================
-   NOTES MAIN AREA
-========================================================== */
+/* =========================================================
+   NOTES PAGE
+========================================================= */
+
+.notes-page {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    background: #f5f7fb;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.notes-container {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.notes-topbar {
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f8faff 100%
+    );
+
+    border-bottom: 1px solid #e5e7eb;
+
+    padding: 22px 0 20px;
+}
+
+
+.notes-topbar .notes-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.notes-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.notes-heading-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #e0e7ff
+    );
+
+    font-size: 26px;
+
+    box-shadow:
+        0 8px 22px rgba(79, 70, 229, 0.12);
+
+    flex-shrink: 0;
+}
+
+
+.notes-heading h1 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -0.5px;
+}
+
+
+.notes-heading p {
+    margin: 4px 0 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.notes-search {
+    width: min(360px, 100%);
+
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe3eb;
+
+    border-radius: 12px;
+
+    padding: 0 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.notes-search:hover {
+    border-color: #c7d2fe;
+
+    transform: translateY(-1px);
+}
+
+
+.notes-search:focus-within {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+.notes-search span {
+    color: #6b7280;
+
+    font-size: 22px;
+
+    margin-right: 8px;
+}
+
+
+.notes-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+
+.notes-search input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.notes-workspace {
+    padding: 24px 0 40px;
+}
+
 
 .notes-layout {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 18px 20px 40px;
-
     display: grid;
-    grid-template-columns: 350px minmax(0, 1fr);
+
+    grid-template-columns:
+        340px
+        minmax(0, 1fr);
 
     gap: 20px;
 
@@ -23,11 +199,18 @@
 }
 
 
-/* ==========================================================
-   LEFT SIDEBAR
-========================================================== */
+/* =========================================================
+   SIDEBAR
+========================================================= */
 
 .notes-sidebar {
+    position: sticky;
+
+    top: 18px;
+
+    height: calc(100vh - 150px);
+
+    min-height: 520px;
 
     background: #ffffff;
 
@@ -35,30 +218,35 @@
 
     border-radius: 18px;
 
-    padding: 14px;
-
-    height: calc(100vh - 150px);
-
-    min-height: 520px;
-
-    position: sticky;
-
-    top: 15px;
-
     overflow: hidden;
 
     box-shadow:
-        0 8px 30px rgba(15, 23, 42, 0.07);
+        0 8px 30px rgba(15, 23, 42, 0.06);
 
-    z-index: 10;
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* ==========================================================
-   SIDEBAR HEADER
-========================================================== */
+.notes-sidebar:hover {
+    box-shadow:
+        0 14px 38px rgba(15, 23, 42, 0.09);
+}
 
-.notes-sidebar-header {
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.sidebar-header {
+    min-height: 74px;
+
+    padding: 15px 18px;
 
     display: flex;
 
@@ -66,107 +254,152 @@
 
     justify-content: space-between;
 
-    gap: 10px;
+    border-bottom: 1px solid #edf0f5;
 
-    padding: 8px 8px 14px;
-
-    border-bottom: 1px solid #eef0f3;
-
-    margin-bottom: 10px;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fafbff
+        );
 }
 
 
-.notes-sidebar-title {
+.sidebar-header small {
+    display: block;
 
-    font-size: 15px;
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    color: #6366f1;
+
+    margin-bottom: 3px;
+}
+
+
+.sidebar-header h2 {
+    margin: 0;
+
+    font-size: 20px;
 
     font-weight: 800;
 
     color: #111827;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
 }
 
 
-/* ==========================================================
-   NAVIGATION SCROLL
-========================================================== */
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+#sidebarToggle {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #4b5563;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#sidebarToggle:hover {
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    transform: rotate(5deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .notes-navigation {
-
-    height: calc(100% - 55px);
+    flex: 1;
 
     overflow-y: auto;
 
-    padding-right: 4px;
+    padding: 10px;
 
     scrollbar-width: thin;
 
-    scrollbar-color: #cbd5e1 transparent;
+    scrollbar-color:
+        #c7d2fe
+        transparent;
 }
 
 
 .notes-navigation::-webkit-scrollbar {
-
-    width: 5px;
+    width: 6px;
 }
 
 
 .notes-navigation::-webkit-scrollbar-track {
-
     background: transparent;
 }
 
 
 .notes-navigation::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
 
-    background: #cbd5e1;
-
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 
-/* ==========================================================
+.notes-navigation::-webkit-scrollbar-thumb:hover {
+    background: #a5b4fc;
+}
+
+
+/* =========================================================
    CATEGORY
-========================================================== */
+========================================================= */
 
 .notes-category {
+    margin-bottom: 7px;
 
-    margin-bottom: 8px;
-
-    border-radius: 13px;
+    border-radius: 12px;
 
     overflow: hidden;
 
+    background: #ffffff;
+
     transition:
-        transform 0.25s ease,
+        background 0.25s ease,
         box-shadow 0.25s ease;
 }
 
 
-/* ==========================================================
-   CATEGORY BUTTON
-========================================================== */
+.notes-category:hover {
+    background: #fafbff;
+}
+
 
 .notes-category-button {
-
     width: 100%;
 
-    min-height: 56px;
+    min-height: 52px;
 
-    border: 1px solid #e8ebf0;
+    padding: 0 13px;
 
-    background: #ffffff;
-
-    border-radius: 13px;
-
-    padding: 9px 12px;
-
-    cursor: pointer;
+    border: 0;
 
     display: flex;
 
@@ -176,159 +409,104 @@
 
     gap: 10px;
 
-    text-align: left;
+    background: transparent;
 
     color: #1f2937;
 
+    cursor: pointer;
+
+    text-align: left;
+
+    border-radius: 11px;
+
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
         background 0.25s ease,
-        box-shadow 0.25s ease;
+        color 0.25s ease,
+        transform 0.2s ease;
 }
 
-
-/* ==========================================================
-   CATEGORY HOVER
-========================================================== */
 
 .notes-category-button:hover {
+    background: #f3f4ff;
 
-    transform: translateX(4px);
-
-    border-color: #c7d2fe;
-
-    background: #fafaff;
-
-    box-shadow:
-        0 8px 22px rgba(79, 70, 229, 0.10);
+    color: #4338ca;
 }
 
 
-/* ==========================================================
-   CATEGORY LEFT
-========================================================== */
+.notes-category-button.active {
+    background:
+        linear-gradient(
+            90deg,
+            #eef2ff,
+            #f8faff
+        );
+
+    color: #4338ca;
+
+    font-weight: 700;
+}
+
 
 .category-left {
+    min-width: 0;
 
     display: flex;
 
     align-items: center;
-
-    min-width: 0;
 
     gap: 11px;
 }
 
 
-/* ==========================================================
-   CATEGORY ICON
-========================================================== */
-
 .category-icon {
+    width: 32px;
+    height: 32px;
 
-    width: 38px;
-
-    height: 38px;
-
-    flex: 0 0 38px;
-
-    border-radius: 11px;
+    flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
+
+    border-radius: 9px;
 
     background: #f3f4f6;
 
-    font-size: 19px;
+    font-size: 16px;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease;
 }
 
 
 .notes-category-button:hover .category-icon {
+    transform: scale(1.1) rotate(-4deg);
 
-    transform:
-        scale(1.12)
-        rotate(-4deg);
-
-    background: #eef2ff;
-
-    box-shadow:
-        0 5px 14px rgba(79, 70, 229, 0.15);
+    background: #e0e7ff;
 }
 
 
-/* ==========================================================
-   CATEGORY TITLE
-========================================================== */
+.notes-category-button.active .category-icon {
+    background: #e0e7ff;
+}
+
 
 .category-title {
-
-    font-size: 14px;
-
-    font-weight: 750;
-
-    white-space: nowrap;
-
     overflow: hidden;
 
     text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    font-weight: 700;
 }
 
-
-/* ==========================================================
-   CATEGORY RIGHT
-========================================================== */
-
-.category-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-}
-
-
-.category-count {
-
-    min-width: 23px;
-
-    height: 23px;
-
-    padding: 0 6px;
-
-    border-radius: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #f3f4f6;
-
-    color: #6b7280;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-
-/* ==========================================================
-   CATEGORY ARROW
-========================================================== */
 
 .category-arrow {
-
     font-size: 9px;
 
     color: #9ca3af;
@@ -340,39 +518,17 @@
 
 
 .notes-category-button.active .category-arrow {
+    color: #4f46e5;
 
     transform: rotate(180deg);
-
-    color: #4f46e5;
 }
 
 
-/* ==========================================================
-   CATEGORY ACTIVE
-========================================================== */
-
-.notes-category-button.active {
-
-    border-color: #c7d2fe;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8f9ff,
-            #ffffff
-        );
-
-    box-shadow:
-        0 5px 18px rgba(79, 70, 229, 0.08);
-}
-
-
-/* ==========================================================
-   CATEGORY OPEN ANIMATION
-========================================================== */
+/* =========================================================
+   CATEGORY ACCORDION
+========================================================= */
 
 .notes-subjects {
-
     display: grid;
 
     grid-template-rows: 0fr;
@@ -383,64 +539,46 @@
 
 
 .notes-category.open .notes-subjects {
-
     grid-template-rows: 1fr;
 }
 
 
 .notes-subjects-inner {
-
     min-height: 0;
 
     overflow: hidden;
 
-    padding-left: 12px;
-
-    padding-top: 0;
-
-    transition:
-        padding-top 0.3s ease;
+    padding: 0 7px;
 }
 
 
 .notes-category.open
 .notes-subjects-inner {
-
-    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 
-/* ==========================================================
+/* =========================================================
    SUBJECT
-========================================================== */
+========================================================= */
 
 .notes-subject {
+    margin: 3px 0;
 
-    margin-bottom: 5px;
-
-    border-radius: 10px;
+    border-radius: 9px;
 
     overflow: hidden;
 }
 
 
-/* ==========================================================
-   SUBJECT BUTTON
-========================================================== */
-
 .notes-subject-button {
-
     width: 100%;
 
-    min-height: 43px;
+    min-height: 40px;
+
+    padding: 0 10px;
 
     border: 0;
-
-    background: transparent;
-
-    border-radius: 9px;
-
-    padding: 7px 9px;
 
     display: flex;
 
@@ -448,33 +586,42 @@
 
     justify-content: space-between;
 
+    background: transparent;
+
     cursor: pointer;
 
-    color: #374151;
+    color: #4b5563;
+
+    text-align: left;
+
+    border-radius: 8px;
 
     transition:
-        background 0.22s ease,
-        transform 0.22s ease,
-        color 0.22s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        padding-left 0.25s ease;
 }
 
 
 .notes-subject-button:hover {
-
     background: #f8fafc;
 
-    transform: translateX(3px);
+    color: #4338ca;
 
-    color: #4f46e5;
+    padding-left: 14px;
 }
 
 
-/* ==========================================================
-   SUBJECT LEFT
-========================================================== */
+.notes-subject-button.active {
+    background: #f5f7ff;
+
+    color: #4338ca;
+
+    font-weight: 700;
+}
+
 
 .subject-left {
-
     display: flex;
 
     align-items: center;
@@ -486,106 +633,64 @@
 
 
 .subject-dot {
-
     width: 7px;
-
     height: 7px;
 
-    flex: 0 0 7px;
+    flex-shrink: 0;
 
     border-radius: 50%;
 
-    background: #cbd5e1;
+    background: #c7d2fe;
 
     transition:
         transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+        background 0.25s ease;
 }
 
 
-.notes-subject-button:hover
-.subject-dot,
-.notes-subject-button.active
-.subject-dot {
-
+.notes-subject-button:hover .subject-dot,
+.notes-subject-button.active .subject-dot {
     background: #6366f1;
 
     transform: scale(1.35);
-
-    box-shadow:
-        0 0 0 4px rgba(99, 102, 241, 0.10);
 }
 
 
-/* ==========================================================
-   SUBJECT TITLE
-========================================================== */
-
 .subject-title {
-
-    font-size: 12.5px;
-
-    font-weight: 650;
-
-    white-space: nowrap;
+    font-size: 13px;
 
     overflow: hidden;
+
+    white-space: nowrap;
 
     text-overflow: ellipsis;
 }
 
 
-/* ==========================================================
-   SUBJECT RIGHT
-========================================================== */
-
-.subject-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-}
-
-
-.subject-count {
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    color: #9ca3af;
-}
-
-
 .subject-arrow {
-
     font-size: 8px;
 
     color: #9ca3af;
 
     transition:
-        transform 0.3s ease;
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 
 .notes-subject-button.active
 .subject-arrow {
-
     transform: rotate(180deg);
 
     color: #6366f1;
 }
 
 
-/* ==========================================================
-   NOTES LIST
-========================================================== */
+/* =========================================================
+   NOTES LIST ACCORDION
+========================================================= */
 
 .notes-list {
-
     display: grid;
 
     grid-template-rows: 0fr;
@@ -596,52 +701,39 @@
 
 
 .notes-subject.open .notes-list {
-
     grid-template-rows: 1fr;
 }
 
 
 .notes-list-inner {
-
     min-height: 0;
 
     overflow: hidden;
 
-    padding-left: 12px;
+    padding-left: 18px;
 
-    padding-bottom: 0;
-
-    transition:
-        padding-bottom 0.3s ease;
+    padding-right: 2px;
 }
 
 
 .notes-subject.open
 .notes-list-inner {
-
     padding-bottom: 5px;
 }
 
 
-/* ==========================================================
+/* =========================================================
    NOTE ITEM
-========================================================== */
+========================================================= */
 
 .note-item {
-
-    position: relative;
-
     width: 100%;
 
-    min-height: 39px;
+    min-height: 38px;
 
-    border: 0;
+    padding: 7px 9px;
 
-    border-left: 2px solid #e5e7eb;
-
-    background: transparent;
-
-    padding: 7px 8px 7px 10px;
+    margin: 2px 0;
 
     display: flex;
 
@@ -649,49 +741,109 @@
 
     gap: 8px;
 
-    text-align: left;
+    border: 1px solid transparent;
 
-    cursor: pointer;
+    border-radius: 8px;
+
+    background: transparent;
 
     color: #4b5563;
 
+    cursor: pointer;
+
+    text-align: left;
+
+    position: relative;
+
+    overflow: hidden;
+
     transition:
-        background 0.22s ease,
-        color 0.22s ease,
-        border-color 0.22s ease,
-        transform 0.22s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        padding-left 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.note-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+
+    width: 3px;
+
+    border-radius: 5px;
+
+    background: #6366f1;
+
+    transform: scaleY(0);
+
+    transition:
+        transform 0.25s ease;
 }
 
 
 .note-item:hover {
-
     background: #f8faff;
 
-    color: #4338ca;
+    border-color: #e0e7ff;
 
-    border-left-color: #818cf8;
+    color: #3730a3;
 
-    transform: translateX(4px);
+    transform: translateX(3px);
+
+    padding-left: 12px;
+
+    box-shadow:
+        0 4px 12px rgba(79, 70, 229, 0.07);
 }
 
 
-/* ==========================================================
-   NOTE ICON
-========================================================== */
+.note-item:hover::before {
+    transform: scaleY(1);
+}
+
+
+.note-item.active {
+    background:
+        linear-gradient(
+            90deg,
+            #eef2ff,
+            #f8faff
+        );
+
+    color: #3730a3;
+
+    border-color: #c7d2fe;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(79, 70, 229, 0.08);
+}
+
+
+.note-item.active::before {
+    transform: scaleY(1);
+}
+
 
 .note-item-icon {
-
     width: 24px;
-
     height: 24px;
-
-    flex: 0 0 24px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
+
+    flex-shrink: 0;
 
     border-radius: 6px;
 
@@ -700,162 +852,44 @@
     font-size: 12px;
 
     transition:
-        transform 0.22s ease,
-        background 0.22s ease;
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
 
-.note-item:hover
-.note-item-icon {
-
-    transform:
-        scale(1.12)
-        rotate(-3deg);
-
-    background: #eef2ff;
-}
-
-
-/* ==========================================================
-   NOTE TITLE
-========================================================== */
-
-.note-item-title {
-
-    flex: 1;
-
-    font-size: 11.5px;
-
-    line-height: 1.45;
-
-    font-weight: 550;
-}
-
-
-/* ==========================================================
-   NOTE ACTIVE
-========================================================== */
-
-.note-item.active {
-
-    background:
-        linear-gradient(
-            90deg,
-            #eef2ff,
-            #fafaff
-        );
-
-    color: #4338ca;
-
-    border-left-color: #4f46e5;
-
-    font-weight: 700;
-}
-
-
-.note-item.active
-.note-item-icon {
-
+.note-item:hover .note-item-icon,
+.note-item.active .note-item-icon {
     background: #e0e7ff;
 
     transform: scale(1.08);
 }
 
 
-/* ==========================================================
-   NEW BADGE
-========================================================== */
-
-.note-new-badge {
-
-    margin-left: auto;
-
-    flex-shrink: 0;
-
-    padding: 3px 6px;
-
-    border-radius: 5px;
-
-    background: #eef2ff;
-
-    color: #4f46e5;
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: .3px;
-
-    animation:
-        newBadgePulse 2.2s ease-in-out infinite;
-}
-
-
-@keyframes newBadgePulse {
-
-    0%,
-    100% {
-
-        box-shadow:
-            0 0 0 0
-            rgba(79, 70, 229, 0);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 0 0 4px
-            rgba(79, 70, 229, 0.08);
-
-    }
-
-}
-
-
-/* ==========================================================
-   EMPTY CATEGORY
-========================================================== */
-
-.notes-category-empty {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 12px;
-
-    margin: 3px 0 5px 5px;
-
-    border-left: 2px solid #e5e7eb;
-
-    color: #9ca3af;
-
-    font-size: 11px;
-
-    font-style: italic;
-}
-
-
-/* ==========================================================
-   SEARCH HIDDEN
-========================================================== */
-
-.search-hidden {
-
-    display: none !important;
-}
-
-
-/* ==========================================================
-   RIGHT CONTENT
-========================================================== */
-
-.notes-content {
+.note-item-title {
+    flex: 1;
 
     min-width: 0;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.notes-content {
+    min-width: 0;
+
+    min-height: calc(100vh - 150px);
 
     background: #ffffff;
 
@@ -865,22 +899,23 @@
 
     overflow: hidden;
 
-    min-height: calc(100vh - 150px);
-
     box-shadow:
-        0 8px 30px rgba(15, 23, 42, 0.07);
+        0 8px 30px rgba(15, 23, 42, 0.05);
 
-    position: relative;
+    display: flex;
+
+    flex-direction: column;
 }
 
 
-/* ==========================================================
+/* =========================================================
    CONTENT HEADER
-========================================================== */
+========================================================= */
 
-.notes-content-header {
+.content-header {
+    height: 58px;
 
-    min-height: 54px;
+    flex-shrink: 0;
 
     padding: 0 18px;
 
@@ -890,20 +925,20 @@
 
     justify-content: space-between;
 
-    gap: 12px;
+    gap: 15px;
 
-    border-bottom: 1px solid #eef0f3;
+    border-bottom: 1px solid #edf0f5;
 
-    background: #ffffff;
-
-    position: relative;
-
-    z-index: 2;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fafbff
+        );
 }
 
 
-.notes-breadcrumb {
-
+.content-breadcrumb {
     min-width: 0;
 
     color: #6b7280;
@@ -918,19 +953,15 @@
 }
 
 
-/* ==========================================================
-   FULLSCREEN BUTTON
-========================================================== */
+.content-fullscreen {
+    width: 36px;
+    height: 36px;
 
-#notesFullscreen {
-
-    width: 34px;
-
-    height: 34px;
+    flex-shrink: 0;
 
     border: 1px solid #e5e7eb;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background: #ffffff;
 
@@ -938,34 +969,54 @@
 
     cursor: pointer;
 
-    font-size: 16px;
+    font-size: 18px;
 
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
-#notesFullscreen:hover {
-
-    background: #f5f3ff;
+.content-fullscreen:hover {
+    background: #eef2ff;
 
     color: #4f46e5;
+
+    border-color: #c7d2fe;
 
     transform: scale(1.05);
 }
 
 
-/* ==========================================================
+/* =========================================================
+   VIEWER
+========================================================= */
+
+.notes-viewer {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 600px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
    WELCOME
-========================================================== */
+========================================================= */
 
 .notes-welcome {
+    position: absolute;
 
-    min-height: 500px;
+    inset: 0;
 
     display: flex;
+
+    flex-direction: column;
 
     align-items: center;
 
@@ -974,37 +1025,60 @@
     text-align: center;
 
     padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fafbff 0%,
+            #ffffff 65%
+        );
 }
 
 
-.notes-welcome-inner {
-
-    max-width: 520px;
-}
-
-
-.notes-welcome-icon {
-
+.welcome-icon {
     width: 74px;
-
     height: 74px;
-
-    margin: 0 auto 18px;
-
-    border-radius: 22px;
-
-    background: #eef2ff;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
 
     font-size: 34px;
 
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.10);
+
     animation:
         welcomeFloat 3s ease-in-out infinite;
+}
+
+
+.notes-welcome h2 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+
+    color: #111827;
+}
+
+
+.notes-welcome p {
+    max-width: 470px;
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
 
@@ -1012,57 +1086,32 @@
 
     0%,
     100% {
-
         transform: translateY(0);
-
     }
 
     50% {
-
         transform: translateY(-7px);
-
     }
 
 }
 
 
-.notes-welcome h2 {
-
-    margin: 0 0 8px;
-
-    color: #111827;
-
-    font-size: 23px;
-}
-
-
-.notes-welcome p {
-
-    margin: 0;
-
-    color: #6b7280;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* ==========================================================
+/* =========================================================
    IFRAME
-========================================================== */
+========================================================= */
 
-#notesFrame {
+.notes-frame {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 600px;
+
+    border: 0;
 
     display: block;
 
-    width: 100%;
-
-    height: calc(100vh - 205px);
-
-    min-height: 500px;
-
-    border: 0;
+    background: #ffffff;
 
     opacity: 0;
 
@@ -1071,304 +1120,339 @@
 }
 
 
-#notesFrame.loaded {
-
+.notes-frame.loaded {
     opacity: 1;
 }
 
 
-/* ==========================================================
+/* =========================================================
    FULLSCREEN
-========================================================== */
+========================================================= */
 
 .notes-content.fullscreen {
-
     position: fixed;
 
     inset: 0;
+
+    z-index: 9999;
 
     width: 100vw;
 
     height: 100vh;
 
-    min-height: 100vh;
-
-    z-index: 9999;
-
     border-radius: 0;
+
+    min-height: 100vh;
 }
 
 
 .notes-content.fullscreen
-#notesFrame {
+.notes-viewer {
+    min-height: 0;
 
-    height: calc(100vh - 54px);
-
+    height: calc(100vh - 58px);
 }
 
 
-/* ==========================================================
-   MOBILE SIDEBAR TOGGLE
-========================================================== */
+.notes-content.fullscreen
+.notes-frame {
+    min-height: 0;
 
-#sidebarToggle {
-
-    display: none;
-
-    border: 0;
-
-    background: #eef2ff;
-
-    color: #4f46e5;
-
-    border-radius: 8px;
-
-    padding: 8px 12px;
-
-    cursor: pointer;
-
-    font-weight: 700;
+    height: 100%;
 }
 
 
-/* ==========================================================
-   FOCUS ACCESSIBILITY
-========================================================== */
+/* =========================================================
+   SEARCH HIDDEN
+========================================================= */
 
-.notes-category-button:focus-visible,
-.notes-subject-button:focus-visible,
-.note-item:focus-visible,
-#notesFullscreen:focus-visible {
-
-    outline: 2px solid #818cf8;
-
-    outline-offset: 2px;
+.search-hidden {
+    display: none !important;
 }
 
 
-/* ==========================================================
-   REDUCED MOTION
-========================================================== */
+/* =========================================================
+   EMPTY SEARCH
+========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.notes-empty-search {
+    padding: 30px 15px;
 
-    *,
-    *::before,
-    *::after {
+    text-align: center;
 
-        animation-duration: 0.01ms !important;
+    color: #9ca3af;
 
-        animation-iteration-count: 1 !important;
+    font-size: 13px;
+}
 
-        transition-duration: 0.01ms !important;
 
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.notes-navigation,
+.notes-viewer {
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   CATEGORY ENTRY ANIMATION
+========================================================= */
+
+.notes-category {
+    animation:
+        notesFadeIn 0.35s ease both;
+}
+
+
+.notes-category:nth-child(1) {
+    animation-delay: 0.03s;
+}
+
+
+.notes-category:nth-child(2) {
+    animation-delay: 0.06s;
+}
+
+
+.notes-category:nth-child(3) {
+    animation-delay: 0.09s;
+}
+
+
+.notes-category:nth-child(4) {
+    animation-delay: 0.12s;
+}
+
+
+.notes-category:nth-child(5) {
+    animation-delay: 0.15s;
+}
+
+
+.notes-category:nth-child(6) {
+    animation-delay: 0.18s;
+}
+
+
+.notes-category:nth-child(7) {
+    animation-delay: 0.21s;
+}
+
+
+.notes-category:nth-child(8) {
+    animation-delay: 0.24s;
+}
+
+
+@keyframes notesFadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
     }
 
 }
 
 
-/* ==========================================================
-   TABLET
-========================================================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+
+    .notes-topbar .notes-container {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+
+    .notes-search {
+        width: 100%;
+    }
+
 
     .notes-layout {
-
-        grid-template-columns:
-            290px minmax(0, 1fr);
-
-        gap: 14px;
-
-        padding-left: 12px;
-
-        padding-right: 12px;
-    }
-
-
-    .notes-sidebar {
-
-        border-radius: 14px;
-    }
-
-
-    .notes-content {
-
-        border-radius: 14px;
+        grid-template-columns: 290px minmax(0, 1fr);
     }
 
 }
 
-
-/* ==========================================================
-   MOBILE
-========================================================== */
 
 @media (max-width: 700px) {
 
-    .notes-layout {
-
-        display: block;
-
-        padding: 10px;
-
+    .notes-container {
+        width: 94%;
     }
 
 
-    /* ------------------------------------------
-       SIDEBAR
-    ------------------------------------------ */
+    .notes-workspace {
+        padding-top: 14px;
+    }
+
+
+    .notes-layout {
+        display: block;
+    }
+
 
     .notes-sidebar {
-
         position: relative;
 
         top: auto;
+
+        width: 100%;
 
         height: auto;
 
         min-height: 0;
 
-        max-height: 75vh;
-
-        margin-bottom: 12px;
+        margin-bottom: 14px;
 
         border-radius: 14px;
     }
 
 
-    #sidebarToggle {
-
-        display: block;
-
-    }
-
-
-    .notes-sidebar
     .notes-navigation {
+        max-height: 0;
 
-        display: none;
+        padding: 0 10px;
 
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease,
+            padding 0.3s ease;
     }
 
 
     .notes-sidebar.mobile-open
     .notes-navigation {
+        max-height: 65vh;
 
-        display: block;
+        padding: 10px;
 
+        overflow-y: auto;
     }
 
-
-    .notes-sidebar.mobile-open {
-
-        max-height: 75vh;
-
-    }
-
-
-    /* ------------------------------------------
-       CONTENT
-    ------------------------------------------ */
 
     .notes-content {
-
         min-height: 600px;
 
         border-radius: 14px;
-
     }
 
 
-    .notes-content-header {
-
-        min-height: 48px;
-
-        padding: 0 12px;
-
+    .notes-heading h1 {
+        font-size: 23px;
     }
 
 
-    #notesFrame {
-
-        min-height: 550px;
-
-        height: 70vh;
-
+    .notes-heading p {
+        font-size: 12px;
     }
 
 
-    .notes-welcome {
+    .notes-heading-icon {
+        width: 44px;
+        height: 44px;
 
-        min-height: 450px;
-
-        padding: 25px;
-
+        font-size: 22px;
     }
 
 
-    .notes-welcome h2 {
+    .notes-viewer {
+        min-height: 540px;
+    }
 
-        font-size: 20px;
 
+    .notes-frame {
+        min-height: 540px;
     }
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    SMALL MOBILE
-========================================================== */
+========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 
-    .notes-layout {
-
-        padding: 7px;
-
+    .notes-heading {
+        gap: 10px;
     }
 
 
-    .notes-category-button {
-
-        min-height: 52px;
-
-        padding: 8px 9px;
-
+    .notes-heading h1 {
+        font-size: 21px;
     }
 
 
-    .category-icon {
+    .notes-heading p {
+        font-size: 11px;
+    }
 
-        width: 34px;
 
-        height: 34px;
+    .sidebar-header {
+        min-height: 65px;
 
-        flex-basis: 34px;
-
-        font-size: 17px;
-
+        padding: 12px 14px;
     }
 
 
     .category-title {
-
         font-size: 13px;
-
     }
 
 
     .subject-title {
-
-        font-size: 11.5px;
-
+        font-size: 12px;
     }
 
 
     .note-item-title {
-
         font-size: 11px;
+    }
 
+
+    .content-header {
+        height: 52px;
+
+        padding: 0 12px;
+    }
+
+
+    .content-breadcrumb {
+        font-size: 11px;
+    }
+
+
+    .notes-welcome {
+        padding: 25px 18px;
+    }
+
+
+    .notes-welcome h2 {
+        font-size: 19px;
+    }
+
+
+    .notes-welcome p {
+        font-size: 12px;
     }
 
 }
