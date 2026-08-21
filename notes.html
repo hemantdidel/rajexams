@@ -4,13 +4,12 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Study Notes | RajExams</title>
 
     <meta name="description"
-        content="राजस्थान और भारत के Government Exams की तैयारी के लिए महत्वपूर्ण Study Notes।">
+        content="Rajasthan और India Government Exams के लिए महत्वपूर्ण Study Notes.">
 
     <link rel="icon" href="favicon.ico">
 
@@ -21,244 +20,244 @@
 
 </head>
 
+
 <body>
 
 
-<!-- ==========================================================
-     Header
-========================================================== -->
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <div id="header"></div>
 
 
-<!-- ==========================================================
-     Latest Updates
-========================================================== -->
+<!-- =========================================================
+     BREAKING NEWS
+========================================================= -->
 
 <div id="breaking-news"></div>
 
 
-<!-- ==========================================================
+<!-- =========================================================
      NOTES PAGE
-========================================================== -->
+========================================================= -->
 
 <main class="notes-page">
 
-    <div class="container">
 
+    <!-- =====================================================
+         NOTES TOP BAR
+    ====================================================== -->
 
-        <!-- ==================================================
-             Notes Heading
-        =================================================== -->
+    <section class="notes-topbar">
 
-        <section class="notes-intro">
+        <div class="notes-container">
 
-            <div class="notes-intro-text">
+            <div class="notes-heading">
 
-                <span class="notes-label">
-                    📚 STUDY MATERIAL
-                </span>
+                <div class="notes-heading-icon">
+                    📚
+                </div>
 
-                <h1>
-                    Study Notes
-                </h1>
+                <div>
 
-                <p>
-                    Rajasthan & India Government Exams के लिए
-                    महत्वपूर्ण और परीक्षा उपयोगी Notes
-                </p>
+                    <h1>Study Notes</h1>
+
+                    <p>
+                        Rajasthan & India Government Exams के लिए महत्वपूर्ण Notes
+                    </p>
+
+                </div>
 
             </div>
 
 
             <!-- Search -->
 
-            <div class="notes-search-box">
+            <div class="notes-search">
 
-                <span class="search-icon">⌕</span>
+                <span>⌕</span>
 
                 <input
                     type="search"
                     id="notesSearch"
-                    placeholder="Notes खोजें..."
-                    autocomplete="off">
+                    placeholder="Notes खोजें...">
 
             </div>
-
-        </section>
-
-
-
-        <!-- ==================================================
-             Main Categories
-        =================================================== -->
-
-        <nav class="notes-categories" id="notesCategories">
-
-            <button
-                class="notes-category active"
-                data-category="all">
-
-                सभी Notes
-
-            </button>
-
-            <button
-                class="notes-category"
-                data-category="Rajasthan">
-
-                🏜️ Rajasthan
-
-            </button>
-
-            <button
-                class="notes-category"
-                data-category="India">
-
-                🇮🇳 India
-
-            </button>
-
-            <button
-                class="notes-category"
-                data-category="Science">
-
-                🔬 Science
-
-            </button>
-
-        </nav>
-
-
-
-        <!-- ==================================================
-             Subjects
-        =================================================== -->
-
-        <div
-            class="notes-subjects"
-            id="notesSubjects">
-
-            <!-- Dynamic subjects -->
 
         </div>
 
+    </section>
 
 
-        <!-- ==================================================
-             Notes Library
-        =================================================== -->
 
-        <section
-            class="notes-library"
-            id="notesLibrary">
+    <!-- =====================================================
+         NOTES WORKSPACE
+    ====================================================== -->
+
+    <section class="notes-workspace">
+
+        <div class="notes-container notes-layout">
 
 
-            <!-- Library Header -->
+            <!-- =================================================
+                 LEFT SIDEBAR
+            ================================================== -->
 
-            <div class="library-header">
+            <aside class="notes-sidebar">
 
-                <div>
 
-                    <span class="library-kicker">
-                        NOTES LIBRARY
-                    </span>
+                <div class="sidebar-header">
 
-                    <h2 id="notesSectionTitle">
-                        सभी Study Notes
-                    </h2>
+                    <div>
+
+                        <small>STUDY MATERIAL</small>
+
+                        <h2>Notes</h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="sidebarToggle"
+                        aria-label="Toggle Notes Menu">
+
+                        ☰
+
+                    </button>
 
                 </div>
 
-                <span
-                    id="notesCount"
-                    class="notes-count">
 
-                    0 Notes
+                <!-- Dynamic Notes Navigation -->
 
-                </span>
+                <nav
+                    id="notesNavigation"
+                    class="notes-navigation">
 
-            </div>
+                    <!--
+                        notes.js will generate:
 
+                        Rajasthan
+                          └── Art & Culture
+                                ├── प्रमुख राजस्थानी कृतियाँ
+                                ├── राजस्थान की प्रमुख चित्रकला
+                                └── ...
 
+                        India
+                          └── History
+                          └── Geography
 
-            <!-- Notes List -->
+                        Science
+                          └── Physics
+                          └── Chemistry
+                          └── Biology
+                    -->
 
-            <div
-                id="notesList"
-                class="notes-items">
-
-                <!-- notes.js will load notes here -->
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             Note Reader
-        =================================================== -->
-
-        <section
-            id="noteReader"
-            class="note-reader"
-            hidden>
+                </nav>
 
 
-            <!-- Reader Top -->
-
-            <div class="reader-top">
-
-                <button
-                    id="backToNotes"
-                    class="back-notes">
-
-                    ← सभी Notes
-
-                </button>
-
-                <span
-                    id="readerSubject"
-                    class="reader-subject">
-
-                </span>
-
-            </div>
+            </aside>
 
 
-            <!-- Reader Content -->
 
-            <article
-                id="noteContent"
-                class="note-content">
+            <!-- =================================================
+                 RIGHT CONTENT AREA
+            ================================================== -->
 
-                <!-- Selected HTML note will load here -->
-
-            </article>
+            <section class="notes-content">
 
 
-        </section>
+                <!-- Content Header -->
+
+                <div class="content-header">
+
+                    <div class="content-breadcrumb"
+                         id="notesBreadcrumb">
+
+                        Study Notes
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="content-fullscreen"
+                        id="notesFullscreen"
+                        title="Fullscreen">
+
+                        ⛶
+
+                    </button>
+
+                </div>
 
 
-    </div>
+                <!-- Content Viewer -->
+
+                <div
+                    id="notesViewer"
+                    class="notes-viewer">
+
+
+                    <!-- Initial State -->
+
+                    <div
+                        id="notesWelcome"
+                        class="notes-welcome">
+
+                        <div class="welcome-icon">
+                            📖
+                        </div>
+
+                        <h2>
+                            अपना Note चुनें
+                        </h2>
+
+                        <p>
+                            बाईं ओर से Category → Subject → Note चुनें।
+                            चुना हुआ Note यहाँ दिखाई देगा।
+                        </p>
+
+                    </div>
+
+
+                    <!-- Actual HTML note content -->
+
+                    <iframe
+                        id="notesFrame"
+                        class="notes-frame"
+                        title="Study Note Content"
+                        loading="lazy"
+                        hidden>
+                    </iframe>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </section>
+
 
 </main>
 
 
 
-<!-- ==========================================================
-     Footer
-========================================================== -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <div id="footer"></div>
 
 
 
-<!-- ==========================================================
-     JavaScript
-========================================================== -->
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
 
 <script src="js/loader.js"></script>
 
