@@ -432,127 +432,153 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ======================================================
-       OPEN NOTE
-    ====================================================== */
+/* ======================================================
+   OPEN NOTE
+====================================================== */
 
-    function openNote(
-        note,
-        category,
-        subject,
-        button
-    ) {
+function openNote(
+    note,
+    category,
+    subject,
+    button
+) {
 
-        /*
-         Priority:
+    /*
+     Priority:
 
-         1. file
-         2. url
-         3. slug
-        */
+     1. path
+     2. file
+     3. url
+     4. slug fallback
+    */
 
-        let file = note.file || note.url;
-
-
-        if (!file && note.slug) {
-
-            file = note.slug;
-
-        }
+    let file =
+        note.path ||
+        note.file ||
+        note.url;
 
 
-        if (!file) {
+    /* Slug fallback */
 
-            console.error(
-                "Note file missing:",
-                note
+    if (!file && note.slug) {
+
+        file = `notes/${note.slug}.html`;
+
+    }
+
+
+    /* File missing */
+
+    if (!file) {
+
+        console.error(
+            "Note file missing:",
+            note
+        );
+
+        return;
+
+    }
+
+
+    console.log(
+        "Opening Note:",
+        file
+    );
+
+
+    /* Remove previous active */
+
+    document
+        .querySelectorAll(".note-item.active")
+        .forEach(item => {
+
+            item.classList.remove(
+                "active"
             );
 
-            return;
-
-        }
+        });
 
 
-        /* Remove previous active */
+    /* Active note */
 
-        document
-            .querySelectorAll(".note-item.active")
-            .forEach(item => {
-
-                item.classList.remove(
-                    "active"
-                );
-
-            });
+    button.classList.add(
+        "active"
+    );
 
 
-        /* Active note */
+    /* Breadcrumb */
 
-        button.classList.add(
-            "active"
+    if (breadcrumb) {
+
+        breadcrumb.textContent =
+            `${category} / ${subject} / ${note.title}`;
+
+    }
+
+
+    /* Hide welcome */
+
+    if (welcome) {
+
+        welcome.style.display =
+            "none";
+
+    }
+
+
+    /* Show iframe */
+
+    if (frame) {
+
+        frame.hidden = false;
+
+        frame.classList.remove(
+            "loaded"
         );
 
 
-        /* Breadcrumb */
+        /* IMPORTANT */
 
-        if (breadcrumb) {
-
-            breadcrumb.textContent =
-                `${category}  /  ${subject}  /  ${note.title}`;
-
-        }
+        frame.src = file;
 
 
-        /* Hide welcome */
+        frame.onload = () => {
 
-        if (welcome) {
-
-            welcome.style.display =
-                "none";
-
-        }
-
-
-        /* Show iframe */
-
-        if (frame) {
-
-            frame.hidden = false;
-
-            frame.classList.remove(
+            frame.classList.add(
                 "loaded"
             );
 
-
-            frame.src = file;
-
-
-            frame.onload = () => {
-
-                frame.classList.add(
-                    "loaded"
-                );
-
-            };
-
-        }
+        };
 
 
-        /* Mobile */
+        frame.onerror = () => {
 
-        if (window.innerWidth <= 700) {
+            console.error(
+                "Unable to load note:",
+                file
+            );
 
-            if (sidebar) {
+        };
 
-                sidebar.classList.remove(
-                    "mobile-open"
-                );
+    }
 
-            }
+
+    /* Mobile */
+
+    if (window.innerWidth <= 700) {
+
+        if (sidebar) {
+
+            sidebar.classList.remove(
+                "mobile-open"
+            );
 
         }
 
     }
+
+}
 
 
     /* ======================================================
