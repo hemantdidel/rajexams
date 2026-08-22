@@ -449,7 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                         note.new === true
                                         ? `
                                             <span class="note-new">
-                                                NEW
+                                                𝔫𝔢𝔴
                                             </span>
                                           `
                                         : ""
