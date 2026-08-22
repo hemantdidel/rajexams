@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 noteButton.innerHTML = `
 
                                     <span class="note-item-icon">
-                                        📄
+                                        📒
                                     </span>
 
                                     <span class="note-item-title">
