@@ -265,47 +265,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 categoryButton.innerHTML = `
 
-                    <span class="category-left">
+    <span class="category-left">
 
-                        <span class="category-icon">
-                            ${categoryData.icon}
-                        </span>
+        <span class="category-icon">
+            ${categoryData.icon}
+        </span>
 
-                        <span class="category-info">
+        <span class="category-title">
+            ${escapeHTML(categoryName)}
+        </span>
 
-                            <span class="category-title">
-                                ${escapeHTML(categoryName)}
-                            </span>
+    </span>
 
-                            <span class="category-meta">
-                                ${
-                                    totalNotes
-                                }
-                                ${
-                                    totalNotes === 1
-                                        ? "Note"
-                                        : "Notes"
-                                }
-                            </span>
+    <span class="category-right">
 
-                        </span>
+        <span class="category-count">
+            ${totalNotes}
+        </span>
 
-                    </span>
+        <span class="category-arrow">
+            ▾
+        </span>
 
+    </span>
 
-                    <span class="category-right">
-
-                        <span class="category-count">
-                            ${totalNotes}
-                        </span>
-
-                        <span class="category-arrow">
-                            ▾
-                        </span>
-
-                    </span>
-
-                `;
+`;
 
 
                 /* =================================================
