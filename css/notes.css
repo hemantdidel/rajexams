@@ -1671,6 +1671,7 @@
     margin-bottom: 10px;
     overflow: hidden;
     background: #ffffff;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -1678,47 +1679,108 @@
         background 0.3s ease;
 }
 
+
+/* Category Hover */
+
 .notes-category:hover {
     transform: translateY(-3px);
-    border-color: #4f46e5;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+
+    border-color: #e7a0a0;
+
+    box-shadow:
+        0 10px 25px rgba(180, 60, 60, 0.15);
 }
+
+
+/* Category Button */
 
 .notes-category-button {
     width: 100%;
     border: 0;
     background: transparent;
     cursor: pointer;
+
     padding: 14px 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.3s ease;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
+
+
+/* ==========================================
+   LIGHT RED HOVER
+========================================== */
 
 .notes-category:hover .notes-category-button,
 .notes-category-button.active {
-    background: #172033;
-    color: #ffffff;
+
+    background: #fff1f1;
+
+    color: #991b1b;
 }
+
+
+/* Category Title */
 
 .notes-category:hover .category-title,
 .notes-category-button.active .category-title {
-    color: #ffffff;
+
+    color: #991b1b;
 }
+
+
+/* Category Meta */
 
 .notes-category:hover .category-meta,
 .notes-category-button.active .category-meta {
-    color: #cbd5e1;
+
+    color: #b45353;
 }
+
+
+/* Category Count */
+
+.notes-category:hover .category-count,
+.notes-category-button.active .category-count {
+
+    background: #dc2626;
+    color: #ffffff;
+}
+
+
+/* Arrow */
 
 .notes-category:hover .category-arrow,
 .notes-category-button.active .category-arrow {
+
+    color: #dc2626;
+
     transform: rotate(180deg);
 }
 
+
+/* Arrow Animation */
+
 .category-arrow {
-    transition: transform 0.35s ease;
+
+    transition:
+        transform 0.35s ease,
+        color 0.3s ease;
+}
+
+
+/* Count */
+
+.category-count {
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 /* ==========================================================
